@@ -1,0 +1,24 @@
+@mixin breakpoint($point) {
+  @if $point == retina {
+    @media print,
+      (-o-min-device-pixel-ratio: 5/4),
+      (-webkit-min-device-pixel-ratio: 1.25),
+      (min-resolution: 120dpi) { @content; }
+  } @else if $point == xx-small {
+    @media only screen and (max-width: $breakpoint-xx-small) { @content; }
+  } @else if $point == x-small {
+    @media only screen and (max-width: $breakpoint-x-small) { @content; }
+  } @else if $point == small {
+    @media only screen and (max-width: $breakpoint-small) { @content; }
+  } @else if $point == medium {
+    @media only screen and (max-width: $breakpoint-medium) { @content; }
+  } @else if $point == large {
+    @media only screen and (max-width: $breakpoint-large) { @content; }
+  } @else if $point == x-large {
+    @media only screen and (max-width: $breakpoint-x-large) { @content; }
+  } @else if $point == xx-large {
+    @media only screen and (max-width: $breakpoint-xx-large) { @content; }
+  } @else {
+    @media only screen and ($point) { @content; }
+  }
+}

@@ -1,0 +1,20 @@
+* {
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font: 400 20px/1.6 $text-font-family;
+  background: $background-color;
+  color: $text-color;
+
+  @include breakpoint(small) {
+    font-size: 18px;
+    line-height: 1.4;
+  }
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>{{meta_title}}</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="{{meta_description}}">
+
+    <meta name="twitter:card" content="summary">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="{{meta_title}}">
+    <meta property="og:description" content="{{meta_description}}">
+
+    {{> custom/meta this}}
+
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link href="//fonts.googleapis.com/" rel="dns-prefetch">
+    <link href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Open+Sans:700,400" rel="stylesheet">
+
+    <!-- build:css({src,.tmp}) /assets/css/main.min.css -->
+    <link href="/assets/_components/font-awesome/css/font-awesome.css">
+    <link href="/assets/_components/nprogress/nprogress.css">
+    <link href="/assets/_components/prismjs/prism.css">
+    <link href="/assets/css/style.css">
+    <!-- endbuild -->
+
+    <!-- build:js /assets/js/head-scripts.min.js -->
+    <script src="/assets/_components/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
+
+    {{ghost_head}}
+  </head>
+  <body class="{{body_class}}">
+
+    {{> drawer this}}
+
+    <div class="drawer-overlay"></div>
+    <main id="container" role="main" class="container">
+      <div class="surface">
+        <div class="surface-container">
+          <div data-pjax-container class="content">
+            {{{body}}}
+          </div>
+        </div>
+      </div>
+    </main>
+
+    {{ghost_foot}}
+
+    <!-- build:js /assets/js/foot-scripts.min.js -->
+    <script src="/assets/_components/nprogress/nprogress.js"></script>
+    <script src="/assets/_components/prismjs/prism.js"></script>
+    <script src="/assets/_components/jquery-pjax/jquery.pjax.js"></script>
+    <script src="/assets/js/drawer.js"></script>
+    <script src="/assets/js/imageLoader.js"></script>
+    <script src="/assets/js/scripts.js"></script>
+    <!-- endbuild -->
+
+    <script type="text/javascript">
+      {{> custom/config}}
+
+      (function(g,h,o,s,t,z){g.GoogleAnalyticsObject=s;g[s]||(g[s]=
+      function(){(g[s].q=g[s].q||[]).push(arguments)});g[s].s=+new Date;
+      t=h.createElement(o);z=h.getElementsByTagName(o)[0];
+      t.src='//www.google-analytics.com/analytics.js';
+      z.parentNode.insertBefore(t,z)}(window,document,'script','ga'));
+      ga('create',ga_ua);ga('send','pageview');
+
+      (function () {
+      var s = document.createElement('script'); s.async = true;
+      s.type = 'text/javascript';
+      s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+      (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+      }());
+    </script>
+  </body>
+</html>

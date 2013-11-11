@@ -1,0 +1,50 @@
+//----------------------------------*\
+// BREAKPOINTS
+//----------------------------------*/
+
+$breakpoint-xx-small: 320px - 1px;
+$breakpoint-x-small: 480px - 1px;
+$breakpoint-small: 768px - 1px;
+$breakpoint-medium: 1024px - 1px;
+$breakpoint-large: 1140px - 1px;
+$breakpoint-x-large: 1280px - 1px;
+$breakpoint-xx-large: 1444px - 1px;
+
+
+
+//----------------------------------*\
+// PALLETE
+//----------------------------------*/
+
+$background-color: #fff;
+$text-color: #333;
+$muted-text-color: #B3B3B3;
+$line-breaks-color: #F2F2F2;
+
+$primary-color: #57A3E8;
+
+//----------------------------------*\
+// TYPO
+//----------------------------------*/
+
+$title-font-family: "Open Sans", "Myriad Pro", "Lucida Grande",
+  "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+
+$text-font-family: "Droid Serif", Georgia, Cambria, "Times New Roman",
+  Times, serif;
+
+//----------------------------------*\
+// DRAWER
+//----------------------------------*/
+
+$drawer-background-color: #232323;
+$drawer-text-color: #fff;
+
+//----------------------------------*\
+// INPUTS
+//----------------------------------*/
+
+$input-font-family: $title-font-family;
+$input-background-color: $line-breaks-color;
+$input-text-color: $text-color;
+$input-placeholder-color: $muted-text-color;

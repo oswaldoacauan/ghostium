@@ -1,0 +1,58 @@
+.btn {
+  display: inline-block;
+  position: relative;
+  height: 40px;
+  padding: 0 20px;
+  border: 0;
+  color: $text-color;
+  background-color: $line-breaks-color;
+  font-size: 14px;
+  line-height: 39px;
+  text-align: center;
+  text-decoration: none;
+  font-style: normal;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  vertical-align: bottom;
+  touch-callout: none;
+  user-select: none;
+  font-family: $title-font-family;
+  font-weight: 400;
+  border-radius: 3px;
+  transition: all .1s ease;
+
+  &:hover,
+  &:focus {
+    color: $text-color;
+    background-image: linear-gradient(to bottom,rgba(0,0,0,0.05),rgba(0,0,0,0.05));
+    background-repeat: repeat-x;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+  }
+
+  &:active {
+    background-image: linear-gradient(to bottom,rgba(0,0,0,0.1),rgba(0,0,0,0.1));
+    background-repeat: repeat-x;
+    border-top: 1px solid rgba(0,0,0,0.2);
+    border-bottom-width: 0;
+  }
+
+  &.btn-small {
+    height: 34px;
+    line-height: 35px;
+  }
+
+  &.btn-big {
+    height: 45px;
+    line-height: 44px;
+  }
+
+  &.btn-primary {
+    background-color: $primary-color;
+    color: $background-color;
+
+    &:hover,
+    &:focus {
+      color: $background-color;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{{!< default}}
+
+<aside role="banner" class="cover">
+  <div {{#if @blog.cover}}data-load-image="{{@blog.cover}}"{{/if}} class="cover-image"></div>
+  <div class="cover-container">
+    {{#if @blog.logo}}
+      <a href="{{@blog.url}}" class="cover-logo">
+        <img src="{{@blog.logo}}" alt="Blog Logo">
+      </a>
+    {{/if}}
+    <h1 class="cover-title">{{@blog.title}}</h1>
+    <p class="cover-description">{{@blog.description}}</p>
+  </div>
+</aside>
+
+<section class="wrapper">
+  <div class="wrapper-container">
+    <section class="post-list">
+      {{#foreach posts}}
+        {{> post/list this}}
+      {{/foreach}}
+    </section>
+
+    {{pagination}}
+
+    {{> footer this}}
+  </div>
+</section>

@@ -1,0 +1,106 @@
+.drawer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  outline: 0;
+  background-color: $drawer-background-color;
+}
+
+.drawer-overlay {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+
+  .drawer-open & {
+    display: block;
+    left: 280px;
+    z-index: 1000;
+  }
+}
+
+.drawer-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 45px;
+  height: 45px;
+  z-index: 1000;
+  font-size: 24px;
+  padding: 0;
+  outline: 0;
+  border: 0;
+  text-align: center;
+  vertical-align: middle;
+  background-color: $drawer-background-color;
+  color: $drawer-text-color;
+  transition: opacity .3s linear;
+
+  &:hover,
+  &:focus {
+    outline: 0;
+    color: $drawer-text-color;
+  }
+
+  &.drawer-button-hidden,
+  .drawer-transition & {
+    opacity: 0;
+  }
+
+  .drawer-open & {
+    display: none;
+  }
+}
+
+.drawer-container {
+  display: none;
+  height: 100%;
+  overflow: auto;
+  overflow-scrolling: touch;
+  box-shadow: inset -1px 0 3px rgba(0, 0, 0, 0.3);
+  padding: 15px 10%;
+
+  &::scrollbar {
+    display: none;
+  }
+
+  .drawer-transition & {
+    display: block;
+    width: 280px;
+  }
+}
+
+.drawer-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.drawer-list-item {
+  line-height: 1.7;
+
+  a {
+    font-family: $title-font-family;
+    font-weight: 700;
+    font-size: 11px;
+    color: $drawer-text-color;
+    text-decoration: none;
+    opacity: .7;
+    transition: opacity .3s ease-in-out;
+
+    &:focus,
+    &:hover {
+      color: $drawer-text-color;
+      opacity: 1;
+    }
+
+    .fa {
+      margin-right: 7px;
+      font-size: 22px;
+    }
+  }
+}

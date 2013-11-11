@@ -1,0 +1,133 @@
+.post-list {}
+
+.post-item-header,
+.post-item-footer,
+.post-item-excerpt {
+  padding-bottom: 5px;
+}
+
+.post-item {
+  position: relative;
+  padding: 35px 0;
+  border-bottom: 1px solid $line-breaks-color;
+  word-wrap: break-word;
+
+  &:first-child {
+    padding-top: 0;
+  }
+
+  &:last-child {
+    border-bottom: 0;
+  }
+}
+
+.post-item-header {}
+
+.post-item-title {
+  line-height: 1.1;
+
+  a {
+    text-decoration: none;
+
+    &:focus,
+    &:hover {
+
+    }
+  }
+}
+
+.post-item-excerpt {
+  font-size: 18px;
+  line-height: 1.4;
+
+  p {
+    margin: 0;
+  }
+}
+
+.post-item-footer {}
+
+.post-item-meta-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.post-item-meta-item {
+  display: inline-block;
+  font-size: 16px;
+  color: $muted-text-color;
+
+  &:before {
+    content: ' · ';
+  }
+
+  &:first-child:before {
+    content: '';
+    display: none;
+  }
+
+  a {
+    color: $muted-text-color;
+    text-decoration: none;
+    transition: text-decoration .2s;
+
+    &:focus,
+    &:hover {
+      color: $muted-text-color;
+      text-decoration: underline;
+    }
+  }
+
+  time, span {
+    display: inline-block;
+  }
+
+  @include breakpoint(x-small) {
+    //display: block;
+
+    &:before {
+      display: none;
+    }
+  }
+}
+
+.post-list-pagination {
+  text-align: center;
+  font-size: 14px;
+  font-family: $title-font-family;
+  padding: 25px 0;
+  overflow: hidden;
+  border-top: 1px solid $line-breaks-color;
+}
+
+.post-list-pagination-item {
+  color: $muted-text-color;
+
+  &.post-list-pagination-item-current {
+    //line-height: 34px;
+    @include breakpoint(xx-small) {
+      display: none;
+    }
+  }
+
+  &.post-list-pagination-item-prev,
+  &.post-list-pagination-item-next {
+    //padding: 5px 10px;
+    //border-radius: 25px;
+    //border: 1px solid $muted-text-color;
+    text-decoration: none;
+    transition: all .3s;
+
+    &:hover,
+    &:focus {
+      //border-color: $primary-color;
+      color: $primary-color;
+    }
+  }
+
+  &.post-list-pagination-item-prev { float: left; }
+  &.post-list-pagination-item-next { float: right; }
+}
+
+

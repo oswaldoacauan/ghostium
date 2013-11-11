@@ -1,0 +1,15 @@
+table {
+  min-width: 100%;
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+td, th {
+  padding: .3rem 1rem;
+}
+
+tbody > tr:nth-child(odd) {
+  background-color: $line-breaks-color;
+  border-top: 1px solid $muted-text-color;
+  border-bottom: 1px solid $muted-text-color;
+}

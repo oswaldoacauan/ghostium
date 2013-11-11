@@ -1,0 +1,26 @@
+{
+  "name": "ghostium",
+  "version": "1.0.0",
+  "dependencies": {
+    "modernizr": "~2.6.2",
+    "jquery": "~2.0.3"
+  },
+  "homepage": "http://ghostium.oswaldoacauan.com/",
+  "authors": [
+    "Oswaldo Acauan <hello@oswaldoacauan.com>"
+  ],
+  "description": "A Ghost theme focused on content based on Medium design/ux",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "src/assets/_components"
+  ],
+  "devDependencies": {
+    "font-awesome": "~4.0.1",
+    "jquery-pjax": "~1.7.3",
+    "nprogress": "~0.1.2",
+    "prismjs": "*"
+  }
+}

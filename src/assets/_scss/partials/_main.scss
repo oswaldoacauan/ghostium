@@ -1,0 +1,92 @@
+html,
+body,
+.container {
+  height: 100%;
+}
+
+#container {
+  overflow: hidden;
+  transition: transform cubic-bezier(.2, .3, .25, .9) .2s;
+  backface-visibility: hidden;
+
+  .drawer-transition & {
+    left: 0;
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    z-index: 800;
+  }
+
+  .drawer-open & {
+    transform: translate3d(280px, 0, 0);
+  }
+}
+
+.surface {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.surface-container {
+  position: relative;
+  height: 100%;
+  overflow: auto;
+  overflow-scrolling: touch;
+}
+
+.wrapper {
+  position: absolute;
+  left: 30%;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  outline: 0;
+  background-color: $background-color;
+  overflow: auto;
+  overflow-scrolling: touch;
+
+  @include breakpoint(medium) {
+    position: relative;
+    left: 0;
+  }
+
+  &.wrapper-post {
+    position: relative;
+    left: 0;
+  }
+}
+
+.wrapper-container {
+  padding: 40px 10% 40px 185px;
+  max-width: 910px;
+
+  @include breakpoint(medium) {
+    padding: 40px 10%;
+    max-width: 100%;
+  }
+
+  .wrapper-post & {
+    @extend .center-block;
+    max-width: 700px;
+    padding-left: 0;
+    padding-right: 0;
+
+    @include breakpoint(medium) {
+      width: 75%;
+    }
+
+    @include breakpoint(small) {
+      width: 100%;
+    }
+  }
+
+  @include breakpoint(small) {
+    &,
+    .wrapper-post & {
+      padding: 25px 15px;
+    }
+  }
+}

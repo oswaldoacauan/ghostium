@@ -1,0 +1,159 @@
+.post {
+  @include breakpoint(small) {
+    padding-top: 30px;
+  }
+}
+
+.post-container {
+  position: relative;
+}
+
+.post-header {}
+
+.post-meta-list {
+  @extend .post-item-meta-list;
+  line-height: 1;
+  margin-bottom: 15px;
+  font-family: $title-font-family;
+}
+
+.post-meta-item {
+  @extend .post-item-meta-item;
+  font-size: 13.5px;
+}
+
+.post-title {
+  line-height: 1;
+  padding-bottom: 15px;
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      color: inherit;
+    }
+  }
+}
+
+.post-subtitle {
+  font-style: italic;
+  font-family: $text-font-family;
+  font-weight: 400;
+  line-height: 1.2;
+  padding-bottom: 15px;
+}
+
+.post-author {
+  .post-footer & {
+    padding-right: 20px;
+  }
+}
+
+.post-author-avatar {
+  width: 80px;
+  height: 80px;
+  display: block;
+  margin-bottom: 10px;
+
+  img {
+    border-radius: 100%;
+    width: 100%;
+  }
+
+  .post-side & {
+    float: right;
+  }
+
+  .post-footer & {
+    float: left;
+    margin-bottom: 0;
+    margin-right: 10px;
+  }
+}
+
+.post-author-info {
+  .post-side & {
+    clear: right;
+  }
+
+  .post-footer & {
+    overflow: hidden;
+  }
+}
+
+.post-author-name {
+  display: block;
+  line-height: 1;
+  margin-bottom: 5px;
+  text-decoration: none;
+  font-family: $title-font-family;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.post-author-bio {
+  font-size: 12px;
+  font-style: italic;
+  color: $muted-text-color;
+  margin-bottom: 0;
+}
+
+.post-side {
+  position: absolute;
+  top: 0;
+  left: -230px;
+  width: 160px;
+  padding: 0 5px;
+  text-align: right;
+  z-index: 300;
+
+  @include breakpoint(large) {
+    display: none;
+  }
+}
+
+.post-body {
+  h1, .h1,
+  h2, .h2 {
+    padding-top: 30px;
+    margin-bottom: 4px;
+
+    & ~ hr {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.post-footer {
+  overflow: hidden;
+  border-top: 2px solid $line-breaks-color;
+  padding: 40px 0;
+
+  & > .post-social,
+  & > .post-author {
+    width: 50%;
+    float: left;
+  }
+}
+
+.post-footer-heading {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 10px;
+  color: $muted-text-color;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.post-social {
+  text-align: right;
+
+  .post-footer & {
+    padding-left: 20px;
+  }
+}
+
+.post-comments {
+  border-top: 2px solid $line-breaks-color;
+  padding: 40px 0;
+}

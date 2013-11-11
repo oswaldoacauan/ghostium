@@ -1,0 +1,24 @@
+.footer {
+  font-family: $title-font-family;
+  padding: 20px 0;
+  border-top: 2px solid $line-breaks-color;
+  color: $muted-text-color;
+
+  a {
+    color: $muted-text-color;
+
+    &:hover,
+    &:focus {
+      color: $primary-color;
+    }
+  }
+
+  p {
+    margin-bottom: 0;
+    line-height: 1;
+  }
+
+  small {
+    font-size: 11px;
+  }
+}
