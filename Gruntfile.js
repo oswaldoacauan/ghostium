@@ -71,8 +71,8 @@ module.exports = function(grunt) {
         files: [{
           dot: true,
           src: [
-            'assets',
-            'partials',
+            'assets/**/*',
+            'partials/**/*',
             '*.hbs'
           ]
         }]
