@@ -341,7 +341,16 @@ module.exports = function(grunt) {
         commitFiles: ['-a'],
         pushTo: 'origin'
       }
-    }
+    },
+
+    /**
+     * Auto generate Changelog based on git metadata
+     */
+    changelog: {
+      options: {
+        github: 'oswaldoacauan/ghostium'
+      }
+    },
   });
 
   /**
