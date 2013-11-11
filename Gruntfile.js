@@ -71,7 +71,10 @@ module.exports = function(grunt) {
         files: [{
           dot: true,
           src: [
-            'assets/**/*',
+            '<%= dir.css %>/**/*',
+            '<%= dir.js %>/**/*',
+            '<%= dir.images %>/**/*',
+            '<%= dir.fonts %>/**/*',
             'partials/**/*',
             '*.hbs'
           ]
