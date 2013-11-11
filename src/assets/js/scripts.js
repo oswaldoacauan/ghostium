@@ -43,6 +43,11 @@
     if ($.support.pjax) {
       $document.on('pjax:start', function() { NProgress.start(); });
       $document.on('pjax:end', function() {
+        if(ga !== undefined) {
+          ga('set', 'location', window.location.href);
+          ga('send', 'pageview');
+        }
+
         _prismHandler();
         NProgress.done();
       });
