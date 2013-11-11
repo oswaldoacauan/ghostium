@@ -1,3 +1,11 @@
+<a name="v1.0.5"></a>
+### v1.0.5 (2013-11-11)
+
+
+#### Bug Fixes
+
+* **grunt:** Fix clean release folders ([bb3899c5](http://github.com/oswaldoacauan/ghostium/commit/bb3899c52eff283f68f4b80d43f78f65d720894a))
+
 <a name="v1.0.4"></a>
 ### v1.0.4 (2013-11-11)
 
