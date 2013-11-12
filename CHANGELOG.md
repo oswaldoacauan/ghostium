@@ -1,3 +1,11 @@
+<a name="v1.0.8"></a>
+### v1.0.8 (2013-11-11)
+
+
+#### Bug Fixes
+
+* **grunt:** Fix clean release task ([5949166d](http://github.com/oswaldoacauan/ghostium/commit/5949166df10adf1486d37331a919278c2feb627c))
+
 <a name="v1.0.7"></a>
 ### v1.0.7 (2013-11-11)
 
