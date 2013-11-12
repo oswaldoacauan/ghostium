@@ -1,6 +1,6 @@
 {
   "name": "ghostium",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "dependencies": {
     "modernizr": "~2.6.2",
     "jquery": "~2.0.3"

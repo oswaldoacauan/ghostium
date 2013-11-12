@@ -1,3 +1,11 @@
+<a name="v1.0.9"></a>
+### v1.0.9 (2013-11-11)
+
+
+#### Bug Fixes
+
+* Enable jQuery ajax cache ([9086a0c3](http://github.com/oswaldoacauan/ghostium/commit/9086a0c3afce03cc8bb871cb6c9df25acb0c916b))
+
 <a name="v1.0.8"></a>
 ### v1.0.8 (2013-11-11)
 
