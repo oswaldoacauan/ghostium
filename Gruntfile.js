@@ -407,7 +407,7 @@ module.exports = function(grunt) {
     'release',
     'Build, move builded files to root, bump and update changelog',
     function(versionType) {
-      grunt.task.run('push-only:' + (versionType || ''));
+      grunt.task.run('push:' + (versionType || '') + ':bump-only');
       grunt.task.run([
         'build',
         'clean:release',
