@@ -1,3 +1,16 @@
+<a name="v1.0.7"></a>
+### v1.0.7 (2013-11-11)
+
+
+#### Bug Fixes
+
+* **grunt:** Fix grunt release task ([62c152c7](http://github.com/oswaldoacauan/ghostium/commit/62c152c7e985930471052face33872839ac12213))
+
+
+#### Features
+
+* **grunt:** Change grunt-bump for grunt-push-release ([410891e8](http://github.com/oswaldoacauan/ghostium/commit/410891e8dd3fba04ae9fde2fcd11bcb56b12ca9b))
+
 <a name="v1.0.5"></a>
 ### v1.0.5 (2013-11-11)
 
