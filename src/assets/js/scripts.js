@@ -5,12 +5,6 @@
 
   $(function () {
 
-    // jQuery Defaults
-    // =================
-    $.ajaxSetup({
-      cache: false
-    });
-
     // Cache a couple of useful elements
     // =================
     var $window   = $(window),
