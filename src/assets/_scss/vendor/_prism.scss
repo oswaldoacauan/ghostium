@@ -2,6 +2,8 @@ code[class*="language-"],
 pre[class*="language-"] {
   font-size: 14px;
   max-width: 100%;
+  word-wrap: break-word;
+  word-break: break-all;
 }
 
 pre[class*=language-] {
