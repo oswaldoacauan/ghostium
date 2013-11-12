@@ -71,10 +71,7 @@ module.exports = function(grunt) {
         files: [{
           dot: true,
           src: [
-            '<%= dir.css %>/**/*',
-            '<%= dir.js %>/**/*',
-            '<%= dir.images %>/**/*',
-            '<%= dir.fonts %>/**/*',
+            '<%= dir.assets %>/**/*',,
             'partials/**/*',
             '*.hbs'
           ]
@@ -337,10 +334,12 @@ module.exports = function(grunt) {
     /**
      * Bump version on package.json and bower.json
      */
-    bump: {
+    push: {
       options: {
         files: ['package.json', 'bower.json'],
         updateConfigs: ['pkg'],
+        add: true,
+        addFiles: ['.'],
         commitFiles: ['-a'],
         pushTo: 'origin'
       }
@@ -408,7 +407,7 @@ module.exports = function(grunt) {
     'release',
     'Build, move builded files to root, bump and update changelog',
     function(versionType) {
-      grunt.task.run('bump-only:' + (versionType || ''));
+      grunt.task.run('push-only:' + (versionType || ''));
       grunt.task.run([
         'build',
         'clean:release',
@@ -416,7 +415,7 @@ module.exports = function(grunt) {
         'clean:build',
         'changelog'
       ]);
-      grunt.task.run('bump-commit');
+      grunt.task.run('push-commit');
     }
   );
 
