@@ -43,7 +43,8 @@
     "grunt-usemin": "~2.0.0",
     "grunt-concurrent": "~0.4.1",
     "grunt-push-release": "~0.1.1",
-    "grunt-conventional-changelog": "~1.0.0"
+    "grunt-conventional-changelog": "~1.0.0",
+    "grunt-csso": "~0.5.0"
   },
   "engines": {
     "node": ">=0.10.0"

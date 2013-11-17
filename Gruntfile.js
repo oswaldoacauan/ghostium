@@ -162,9 +162,27 @@ module.exports = function(grunt) {
     cssmin: {
       build: {
         options: {
-          banner: '<%= tag.banner %>',
           report: 'gzip'
         }
+      }
+    },
+
+    /**
+     * Minify concated CSS files
+     * Compresses and minifies CSS
+     */
+    csso: {
+      build: {
+        options: {
+          banner: '<%= tag.banner %>',
+          report: 'gzip'
+        },
+        files: [{
+          expand: true,
+          cwd: '<%= dir.build %><%= dir.css %>',
+          src: '**/*.css',
+          dest: '<%= dir.build %><%= dir.css %>'
+        }]
       }
     },
 
@@ -395,7 +413,8 @@ module.exports = function(grunt) {
     'rev',
     'copy:build',
     'usemin',
-    'concurrent:build'
+    'concurrent:build',
+    'csso:build'
   ]);
 
   /**
