@@ -16,6 +16,11 @@ blockquote {
     font-size: 28px;
     margin: 48px -90px;
     border-left: none;
+
+    @include breakpoint(small) {
+      margin: 30px 0;
+      font-size: 22px;
+    }
   }
 
   @include breakpoint(small) {
