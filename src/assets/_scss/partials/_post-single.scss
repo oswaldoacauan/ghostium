@@ -68,6 +68,10 @@
     float: left;
     margin-bottom: 0;
     margin-right: 10px;
+
+    @include breakpoint(x-small) {
+      display: none;
+    }
   }
 }
 
