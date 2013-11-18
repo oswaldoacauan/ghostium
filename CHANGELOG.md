@@ -1,3 +1,26 @@
+<a name="v1.1.0"></a>
+## v1.1.0 (2013-11-17)
+
+
+#### Bug Fixes
+
+* **partial:**
+  * Fix Theme name on footer partial ([a7fd4df2](http://github.com/oswaldoacauan/ghostium/commit/a7fd4df2281c86ca231703544b14c436e4441ebf))
+  * Fix Ghost link on footer partial ([7a3c2775](http://github.com/oswaldoacauan/ghostium/commit/7a3c2775d8b5532f3c5899b30971abbbc62aad3a))
+* **styles:**
+  * Fix iOS Safari choopy scroll #6 ([6366b9b2](http://github.com/oswaldoacauan/ghostium/commit/6366b9b2f5dae87b74236955a94f2026cabbc45d))
+  * Add break-word property  on code/pre blocks ([904e6b57](http://github.com/oswaldoacauan/ghostium/commit/904e6b571b7619289144227ef7ffaac0ae551bbb))
+* **templates:**
+  * Change disqus hash to href #4 ([20ff6eba](http://github.com/oswaldoacauan/ghostium/commit/20ff6eba26cf7995fea921046a0bf21cf4f7e222))
+  * Add disqus hash on comment links  #4 ([d2b41bab](http://github.com/oswaldoacauan/ghostium/commit/d2b41bab7db9ec6bad317d03b7cb40b266387959))
+
+
+#### Features
+
+* **drawer:** Close after clicking on pjax link  #8 ([10134a32](http://github.com/oswaldoacauan/ghostium/commit/10134a32c0a210ff517e05ca97960e638304044f))
+* **grunt:** Add grunt-csso in build task #2 ([5472a6a5](http://github.com/oswaldoacauan/ghostium/commit/5472a6a5a296ad8a0e04e2b5f2474e1180412b73))
+* **social:** Add post title on twitter share  #9 ([4bce6b22](http://github.com/oswaldoacauan/ghostium/commit/4bce6b22ec4c4332aa5ceb868c514c1a5ab8bcbf))
+
 <a name="v1.0.9"></a>
 ### v1.0.9 (2013-11-11)
 
