@@ -1,3 +1,16 @@
+<a name="v1.1.1"></a>
+### v1.1.1 (2013-11-17)
+
+
+#### Bug Fixes
+
+* **styles:** Fix pullquote style on small viewports ([89d8d90e](http://github.com/oswaldoacauan/ghostium/commit/89d8d90e023f4f0fb2f7842b9af3fb5370207d25))
+
+
+#### Features
+
+* **styles:** Hide author avatar on small viewports ([2a9d6db4](http://github.com/oswaldoacauan/ghostium/commit/2a9d6db462ca89a74a96da22675f6eb67aaa0919))
+
 <a name="v1.1.0"></a>
 ## v1.1.0 (2013-11-17)
 
