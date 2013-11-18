@@ -34,7 +34,12 @@ body,
   position: relative;
   height: 100%;
   overflow: auto;
-  overflow-scrolling: touch;
+  -webkit-overflow-scrolling: touch;
+}
+
+.content {
+  position: relative;
+  min-height: 100%;
 }
 
 .wrapper {
@@ -46,7 +51,7 @@ body,
   outline: 0;
   background-color: $background-color;
   overflow: auto;
-  overflow-scrolling: touch;
+  -webkit-overflow-scrolling: touch;
 
   @include breakpoint(medium) {
     position: relative;

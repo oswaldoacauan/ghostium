@@ -37,6 +37,11 @@
     if ($.support.pjax) {
       $document.on('pjax:start', function() {
         NProgress.start();
+
+        $surface.animate({
+          scrollTop: 0
+        }, 500);
+
         if(Drawer.isOpen())
           Drawer.close();
       });
