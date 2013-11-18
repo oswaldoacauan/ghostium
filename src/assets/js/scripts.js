@@ -105,7 +105,7 @@
           break;
         case 'share-twitter':
           _openWindow(
-            'https://twitter.com/share?url=' + encodeURIComponent(location.href),
+            'https://twitter.com/share?url=' + encodeURIComponent(location.href) + '&text=' + encodeURIComponent(document.title),
             440, 550);
           break;
       }
