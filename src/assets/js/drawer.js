@@ -21,6 +21,9 @@ var Drawer = (function ($, Mzr) {
         close: function() {
           _body.removeClass('drawer-open');
         },
+        isOpen: function() {
+          return _body.hasClass('drawer-open');
+        },
         bindOverlay: function() {
           _overlay.on('click', function(e) {
             e.preventDefault();
@@ -46,7 +49,8 @@ var Drawer = (function ($, Mzr) {
     return {
       init: module.init,
       open: module.open,
-      close: module.close
+      close: module.close,
+      isOpen: module.isOpen
     };
 
 }(jQuery, Modernizr));

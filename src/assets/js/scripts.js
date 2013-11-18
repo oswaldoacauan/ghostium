@@ -35,7 +35,11 @@
     // PJax bindings
     // =================
     if ($.support.pjax) {
-      $document.on('pjax:start', function() { NProgress.start(); });
+      $document.on('pjax:start', function() {
+        NProgress.start();
+        if(Drawer.isOpen())
+          Drawer.close();
+      });
       $document.on('pjax:end', function() {
         if(ga !== undefined) {
           ga('set', 'location', window.location.href);
