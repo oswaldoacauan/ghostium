@@ -45,6 +45,7 @@
         if(Drawer.isOpen())
           Drawer.close();
       });
+
       $document.on('pjax:end', function() {
         if(ga !== undefined) {
           ga('set', 'location', window.location.href);
@@ -55,16 +56,11 @@
         NProgress.done();
       });
 
-      var pjaxHandler = function(e) {
-        $.pjax.click(e, {
-          container: '[data-pjax-container]',
-          fragment: '[data-pjax-container]',
-          replace: true
-        });
-      };
+      $document.pjax('a[data-pjax]', '[data-pjax-container]');
 
-      $document.on('click', 'a[data-pjax]', pjaxHandler);
-      $document.on('submit', 'form[data-pjax]', pjaxHandler);
+      $document.on('submit', 'form[data-pjax]', function(e) {
+        $.pjax.submit(e, '[data-pjax-container]')
+      })
     }
 
     // Data API bindings
