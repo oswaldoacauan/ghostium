@@ -5,6 +5,7 @@
 > A [Ghost](https://ghost.org/) theme focused on content based on [Medium](https://medium.com) design/ux.
 
 ### [→ Live Demo](http://ghostium.oswaldoacauan.com/)
+### [→ Download](https://github.com/oswaldoacauan/ghostium/archive/master.zip)
 
 ## Table of contents
 
