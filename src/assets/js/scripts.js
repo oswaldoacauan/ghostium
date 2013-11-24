@@ -1,4 +1,4 @@
-/* global Drawer: false, ImageLoader: false, NProgress: false, Prism: false */
+/* global ga:false, Drawer: false, ImageLoader: false, NProgress: false, Prism: false */
 (function ($, window, document, undefined) {
 
   'use strict';
@@ -23,8 +23,10 @@
 
     var _prismHandler = function() {
       $('code').not('[class*="language-"]').addClass(function() {
-        var _lang = $(this).attr('class');
-        return 'language-' + (_lang ? _lang : 'markup');
+        var _lang = $(this).attr('class')  || 'markup';
+
+        _lang = _lang.replace(/(language|lang)+\-/gi, '');
+        return 'language-' + (Prism.languages.hasOwnProperty(_lang) ? _lang : 'markup');
       });
 
       Prism.highlightAll();
@@ -59,8 +61,8 @@
       $document.pjax('a[data-pjax]', '[data-pjax-container]');
 
       $document.on('submit', 'form[data-pjax]', function(e) {
-        $.pjax.submit(e, '[data-pjax-container]')
-      })
+        $.pjax.submit(e, '[data-pjax-container]');
+      });
     }
 
     // Data API bindings
