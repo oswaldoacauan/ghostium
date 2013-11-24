@@ -12,11 +12,13 @@
                   {{date published_at timeago="true"}}
                 </time>
               </li>
-              <li class="post-meta-item">
-                {{#foreach tags}}
-                  <span itemprop="{{#if @first}}articleSection{{else}}keywords{{/if}}">{{name}}</span>
-                {{/foreach}}
-              </li>
+              {{#if tags}}
+                <li class="post-meta-item">
+                  {{#foreach tags}}
+                    <span itemprop="{{#if @first}}articleSection{{else}}keywords{{/if}}">{{name}}</span>
+                  {{/foreach}}
+                </li>
+              {{/if}}
               <li class="post-meta-item">
                 <a href="{{url}}#disqus_thread" data-disqus-identifier="{{id}}"></a>
               </li>
