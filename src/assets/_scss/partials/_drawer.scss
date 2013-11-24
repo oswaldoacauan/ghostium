@@ -37,18 +37,18 @@
   text-align: center;
   vertical-align: middle;
   background-color: $drawer-background-color;
-  color: $drawer-text-color;
+  color: $background-color;
   transition: opacity .3s linear;
 
   &:hover,
   &:focus {
     outline: 0;
-    color: $drawer-text-color;
   }
 
   &.drawer-button-hidden,
   .drawer-transition & {
     opacity: 0;
+    pointer-events: none;
   }
 
   .drawer-open & {
@@ -61,8 +61,8 @@
   height: 100%;
   overflow: auto;
   overflow-scrolling: touch;
-  box-shadow: inset -1px 0 3px rgba(0, 0, 0, 0.3);
-  padding: 15px 10%;
+  box-shadow: inset -1px 0 3px rgba(0, 0, 0, .3);
+  padding: 15px 0;
 
   &::scrollbar {
     display: none;
@@ -80,27 +80,65 @@
   list-style: none;
 }
 
+.drawer-list-divider {
+  display: block;
+  margin: 10px 20px;
+  border-top: 1px solid #0a0a0a;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .04);
+  height: 8px;
+}
+
 .drawer-list-item {
-  line-height: 1.7;
+  font-family: $title-font-family;
+  font-weight: 700;
+  font-size: 11px;
+  color: $drawer-text-color;
+  line-height: 1;
+
+  &.drawer-list-title {
+    text-transform: uppercase;
+    margin: 0 20px 10px;
+    opacity: .7;
+  }
 
   a {
-    font-family: $title-font-family;
-    font-weight: 700;
-    font-size: 11px;
-    color: $drawer-text-color;
+    position: relative;
+    display: block;
+    padding: 5px 20px;
+    font-family: inherit;
+    color: inherit;
     text-decoration: none;
-    opacity: .7;
-    transition: opacity .3s ease-in-out;
+    transition: color .3s;
+    -webkit-backface-visibility: hidden;
+
+    &:before {
+      content:'';
+      display: block;
+      position: absolute;
+      width: 0;
+      height: 100%;
+      left: 0;
+      top: 0;
+      background-color: $primary-color;
+      transition: width .3s;
+    }
 
     &:focus,
     &:hover {
-      color: $drawer-text-color;
-      opacity: 1;
+      color: $drawer-hover-color;
+      background-color: rgba(0, 0, 0, .2);
+
+      &:before {
+        width: 4px;
+      }
     }
 
     .fa {
-      margin-right: 7px;
+      color: $drawer-text-color;
+      vertical-align: sub;
+      text-align: left;
       font-size: 22px;
+      width: 1.2857142857142858em; //fixed width icon
     }
   }
 }

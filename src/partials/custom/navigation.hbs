@@ -1,20 +1,46 @@
-{{! Template
+{{! Templates
 
+Link
+==============
 <li class="drawer-list-item">
-  <a href="#" title="My awesome menu link">
-    My menu link
+  <a href="#" title="Follow me on twitter!">
+    <i class="fa fa-twitter"></i> Follow me
   </a>
+</li>
+
+Divider
+==============
+<li class="drawer-list-divider"></li>
+
+Title
+==============
+<li class="drawer-list-item drawer-list-title">
+  Follow me
 </li>
 
 }}
 
 <li class="drawer-list-item">
   <a href="/">
-    <i class="fa fa-home fa-lg fa-fw"></i>Home
+    <i class="fa fa-home"></i>Home
   </a>
 </li>
 <li class="drawer-list-item">
   <a href="{{@blog.url}}/rss/">
-    <i class="fa fa-rss fa-lg fa-fw"></i>Subscribe to Feed
+    <i class="fa fa-rss"></i>Subscribe to Feed
+  </a>
+</li>
+<li class="drawer-list-divider"></li>
+<li class="drawer-list-item drawer-list-title">
+  Follow me
+</li>
+<li class="drawer-list-item">
+  <a href="http://twitter.com" target="_blank">
+    <i class="fa fa-twitter"></i>Twitter
+  </a>
+</li>
+<li class="drawer-list-item">
+  <a href="http://github.com" target="_blank">
+    <i class="fa fa-github"></i>Github
   </a>
 </li>
