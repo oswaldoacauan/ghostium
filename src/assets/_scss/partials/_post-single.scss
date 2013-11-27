@@ -56,8 +56,24 @@
   margin-bottom: 10px;
 
   img {
-    border-radius: 100%;
-    width: 100%;
+
+width: 70px;
+height: 70px;
+text-align: center;
+overflow: hidden;
+float: left;
+display: block;
+position: relative;
+border-radius: 70px;
+background-image: none;
+background-attachment: scroll;
+background-repeat: repeat;
+background-position-x: 0%;
+background-position-y: 0%;
+background-size: auto;
+background-origin: padding-box;
+background-clip: border-box;
+background-color: rgb(255, 255, 255);
   }
 
   .post-side & {
@@ -83,17 +99,31 @@
   .post-footer & {
     overflow: hidden;
   }
+
+  & .post-author-name {
+      text-decoration: none;
+      color: #333332;
+      line-height: 1.2;
+      font-family: "freight-sans-pro","Myriad Pro","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
+      font-weight: 700;
+      display: block;
+      font-size: 19px;
+  }
+
+  & p {
+    color: #666665;
+    line-height: 1.4;
+    font-size: 14px;
+    word-wrap: break-word;
+  }
+  & a {
+    font-family: "ff-tisa-web-pro",Georgia,Cambria,"Times New Roman",Times,serif;
+    font-weight: 400;
+    text-decoration: none;
+  }
 }
 
-.post-author-name {
-  display: block;
-  line-height: 1;
-  margin-bottom: 5px;
-  text-decoration: none;
-  font-family: $title-font-family;
-  font-size: 15px;
-  font-weight: 700;
-}
+
 
 .post-author-bio {
   font-size: 12px;
@@ -113,6 +143,35 @@
 
   @include breakpoint(large) {
     display: none;
+  }
+}
+.post-published-date {
+  padding-top: 10px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  margin-top: 0px;
+  position: relative;
+  top: auto;
+  width: auto;
+  right: auto;
+
+  & strong {
+    color: #333332;
+    font-family: "freight-sans-pro","Myriad Pro","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  & .post-date {
+      color: #666665;
+      line-height: 1.4;
+      font-size: 14px;
+      word-wrap: break-word;
+      font-style: italic;
+      font-family: "freight-sans-pro","Myriad Pro","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
+      font-weight: 400;
+      display: block;
   }
 }
 

@@ -36,8 +36,17 @@
                 <a href="{{author.website}}" class="post-author-name">
                   {{author.name}}
                 </a>
-                <p class="post-author-bio">{{author.bio}}</p>
+                <p class="post-author-bio">{{author.bio}}</p>         
+                {{#if author.location}}<p class="post-author-bio">{{author.location}}</p> {{/if}}       
+                {{#if author.website}}
+                  <p class="post-author-bio"><a href="{{author.website}}" rel="nofollow">{{author.website}}</a></p>
+                {{/if}}    
+         
               </div>
+               <div class="post-published-date">    
+                 <strong>Published</strong>  
+                <time class="post-date">{{date format='MMMM DD, YYYY'}}</time>
+               </div> 
             </div>
           </aside>
           <div itemprop="articleBody" class="post-body">
