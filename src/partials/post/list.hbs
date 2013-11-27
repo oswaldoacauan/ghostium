@@ -1,6 +1,11 @@
 <article itemscope itemtype="http://schema.org/BlogPosting"
   role="article" class="post-item {{post_class}}">
   <header class="post-item-header">
+    {{#if author.image}}
+      <a title="Go to the profile of {{author.name}}" href="{{author.website}}">
+      <img title="{{author.name}}" class="post-item-avatar" src="{{author.image}}">
+    </a>
+    {{/if}}
     <h2 itemprop="name" class="post-item-title">
       <a href="{{url}}" itemprop="url" data-pjax title="{{{title}}}">
         {{{title}}}

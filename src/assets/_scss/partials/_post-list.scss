@@ -21,6 +21,19 @@
   }
 }
 
+.post-item-avatar {
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  margin-left: 20px;
+  float: right;
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+  border-bottom-right-radius: 100%;
+  border-bottom-left-radius: 100%;
+  background-color: rgb(242, 242, 240);
+}
+
 .post-item-header {}
 
 .post-item-title {

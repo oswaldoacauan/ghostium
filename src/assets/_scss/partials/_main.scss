@@ -65,8 +65,8 @@ body,
 }
 
 .wrapper-container {
-  padding: 40px 10% 40px 185px;
-  max-width: 910px;
+  padding: 40px 10% 40px 100px;
+  max-width: 850px;
 
   @include breakpoint(medium) {
     padding: 40px 10%;
