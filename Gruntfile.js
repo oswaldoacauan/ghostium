@@ -418,6 +418,18 @@ module.exports = function(grunt) {
   ]);
 
   /**
+   * Dry-run task
+   * Run `grunt dryrun` on the command line
+   * Build and move bundled files to root
+   */
+  grunt.registerTask('dryrun', 'Build and move bundled files to root', [
+    'build',
+    'clean:release',
+    'copy:release',
+    'clean:build'
+  ]);
+
+  /**
    * Release task
    * Run `grunt release` on the command line
    * Build, move builded files to root, bump and update changelog
@@ -428,10 +440,7 @@ module.exports = function(grunt) {
     function(versionType) {
       grunt.task.run('push:' + (versionType || '') + ':bump-only');
       grunt.task.run([
-        'build',
-        'clean:release',
-        'copy:release',
-        'clean:build',
+        'dryrun',
         'changelog'
       ]);
       grunt.task.run('push-commit');
