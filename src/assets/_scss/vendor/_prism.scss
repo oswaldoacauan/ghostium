@@ -1,9 +1,13 @@
 code[class*="language-"],
 pre[class*="language-"] {
-  font-size: 14px;
+  font-size: 80%;
   max-width: 100%;
   word-wrap: break-word;
   word-break: break-all;
+}
+
+pre[class*="language-"] code[class*="language-"] {
+  font-size: inherit;
 }
 
 pre[class*="language-"] {
