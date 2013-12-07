@@ -98,6 +98,10 @@ If you want to help, please read the [Contributing](https://github.com/oswaldoac
 
 For detailed history, see [Changelog](https://github.com/oswaldoacauan/ghostium/blob/master/CHANGELOG.md).
 
+## Adding Language Support
+
+To add more language support for syntax highlight please see [this guide](https://github.com/oswaldoacauan/ghostium/blob/master/PRISM.md).
+
 ## License
 
 [MIT License](http://oswaldoacauan.mit-license.org/) © Oswaldo Acauan
