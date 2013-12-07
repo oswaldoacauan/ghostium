@@ -16,9 +16,13 @@ sudo npm install
 
 These commands should solve all dependencies needed.
 
+### Download Prism
+
 Now, go to the [Prism.js download page](http://prismjs.com/download.html) and configure Prism to your liking.
 Then, download both the `css` and `js` generated at the bottom of the page.
 Place these files in `ghostium/src/assets/_components/prismjs/`, replacing the ones downloaded by bower.
+
+### Edit src/default.hbs
 
 Next it's time to edit `src/default.hbs` like so:
 
@@ -28,6 +32,8 @@ Next it's time to edit `src/default.hbs` like so:
     <script src="/assets/_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
 ```
+
+### Copy New Build
 
 Now, within the ghostium root directory run `grunt`. This will compile minified `css` and `js` within the build directory.
 
