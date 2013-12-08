@@ -33,6 +33,11 @@ var Drawer = (function ($, Mzr) {
             }
           });
         },
+        bindAnchors: function() {
+          $('.drawer-list a').on('click', function(e) {
+            module.close();
+          });
+        },
         bindContainerTransEnd: function() {
           _container.on(transEndEventName, function(e) {
             if(!_body.hasClass('drawer-open')) {
@@ -42,6 +47,7 @@ var Drawer = (function ($, Mzr) {
         },
         init: function() {
           module.bindOverlay();
+          module.bindAnchors();
           module.bindContainerTransEnd();
         }
     };

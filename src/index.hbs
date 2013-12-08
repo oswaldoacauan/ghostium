@@ -20,8 +20,9 @@
         {{> post/list this}}
       {{/foreach}}
     </section>
-
-    {{pagination}}
+    {{#if pagination}}
+      {{pagination}}
+    {{/if}}
 
     {{> footer this}}
   </div>
