@@ -58,6 +58,18 @@
                   <span itemprop="name">{{author.name}}</span>
                 </a>
                 <p itemprop="description" class="post-author-bio">{{author.bio}}</p>
+                {{#if author.location}}
+                  <p class="post-author-location">{{author.location}}</p>
+                {{/if}}
+                {{#if author.website}}
+                  <p class="post-author-website">
+                    <a href="{{author.website}}" rel="nofollow">{{author.website}}</a>
+                  </p>
+                {{/if}}
+                <p class="post-info">
+                  <b class="post-info-title">Published on</b>
+                  <time class="post-date">{{date format='MMMM DD, YYYY'}}</time>
+                </p>
               </div>
             </div>
             <div class="post-social">

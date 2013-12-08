@@ -83,6 +83,17 @@
   .post-footer & {
     overflow: hidden;
   }
+
+  p {
+    font-size: 12px;
+    font-style: italic;
+    color: $muted-text-color;
+    margin-bottom: 0;
+
+    a {
+      color: $muted-text-color;
+    }
+  }
 }
 
 .post-author-name {
@@ -95,12 +106,19 @@
   font-weight: 700;
 }
 
-.post-author-bio {
-  font-size: 12px;
-  font-style: italic;
-  color: $muted-text-color;
+.post-info {
+  margin-top: 10px;
+}
+
+.post-info-title {
+  @extend .post-author-name;
+  letter-spacing: -.5px;
+  font-style: normal;
+  color: $text-color;
+  font-size: 13px;
   margin-bottom: 0;
 }
+
 
 .post-side {
   position: absolute;
