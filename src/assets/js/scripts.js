@@ -14,6 +14,10 @@
         $surface  = $body,
         $content  = $('.content', $surface);
 
+    // FastClick bindings
+    // =================
+    FastClick.attach(document.body);
+
     // Drawer bindings
     // =================
     Drawer.init();
