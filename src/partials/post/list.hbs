@@ -17,11 +17,13 @@
           {{date published_at timeago="true"}}
         </time>
       </li>
-      <li class="post-item-meta-item">on&nbsp;
+      {{#if tags}}
+        <li class="post-item-meta-item">
           {{#foreach tags}}
             <span itemprop="{{#if @first}}articleSection{{else}}keywords{{/if}}">{{name}}</span>
           {{/foreach}}
-      </li>
+        </li>
+      {{/if}}
       <li class="post-item-meta-item">
         <a href="{{url}}#disqus_thread" data-pjax data-disqus-identifier="{{id}}"></a>
       </li>

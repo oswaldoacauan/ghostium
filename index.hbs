@@ -4,7 +4,7 @@
   <div {{#if @blog.cover}}data-load-image="{{@blog.cover}}"{{/if}} class="cover-image"></div>
   <div class="cover-container">
     {{#if @blog.logo}}
-      <a href="{{@blog.url}}" class="cover-logo">
+      <a href="{{@blog.url}}" class="cover-logo" data-pjax>
         <img src="{{@blog.logo}}" alt="Blog Logo">
       </a>
     {{/if}}
@@ -15,13 +15,17 @@
 
 <section class="wrapper">
   <div class="wrapper-container">
+    {{> custom/featured this}}
+
     <section class="post-list">
       {{#foreach posts}}
         {{> post/list this}}
       {{/foreach}}
     </section>
 
-    {{pagination}}
+    {{#if pagination}}
+      {{pagination}}
+    {{/if}}
 
     {{> footer this}}
   </div>

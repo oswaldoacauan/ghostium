@@ -12,13 +12,15 @@
                   {{date published_at timeago="true"}}
                 </time>
               </li>
+              {{#if tags}}
+                <li class="post-meta-item">
+                  {{#foreach tags}}
+                    <span itemprop="{{#if @first}}articleSection{{else}}keywords{{/if}}">{{name}}</span>
+                  {{/foreach}}
+                </li>
+              {{/if}}
               <li class="post-meta-item">
-                {{#foreach tags}}
-                  <span itemprop="{{#if @first}}articleSection{{else}}keywords{{/if}}">{{name}}</span>
-                {{/foreach}}
-              </li>
-              <li class="post-meta-item">
-                <a href="{{url}}#disqus_thread" data-disqus-identifier="{{id}}"></a>
+                <a href="#disqus_thread" data-disqus-identifier="{{id}}"></a>
               </li>
             </ul>
             <h1 itemprop="name headline" class="post-title"><a href="{{url}}" itemprop="url" data-pjax title="{{{title}}}">{{{title}}}</a></h1>
@@ -56,6 +58,18 @@
                   <span itemprop="name">{{author.name}}</span>
                 </a>
                 <p itemprop="description" class="post-author-bio">{{author.bio}}</p>
+                {{#if author.location}}
+                  <p class="post-author-location">{{author.location}}</p>
+                {{/if}}
+                {{#if author.website}}
+                  <p class="post-author-website">
+                    <a href="{{author.website}}" rel="nofollow">{{author.website}}</a>
+                  </p>
+                {{/if}}
+                <p class="post-info">
+                  <b class="post-info-title">Published on</b>
+                  <time class="post-date">{{date format='MMMM DD, YYYY'}}</time>
+                </p>
               </div>
             </div>
             <div class="post-social">
@@ -69,20 +83,26 @@
       {{/post}}
       <section itemprop="comment" class="post-comments">
         <div id="disqus_thread"></div>
-        <script type="text/javascript">
-          {{> custom/config}}
-          {{#post}}
-            var disqus_identifier = '{{id}}';
-          {{/post}}
-          (function() {
-              var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-              dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-              (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-          })();
-        </script>
       </section>
     </article>
 
     {{> footer this}}
   </div>
 </section>
+
+<script type="text/javascript">
+  {{> custom/config}}
+
+  {{#post}}
+    var disqus_identifier = '{{id}}';
+  {{/post}}
+
+  if(typeof DISQUS !== 'object') {
+    (function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+  }
+</script>
