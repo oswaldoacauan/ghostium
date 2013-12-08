@@ -1,3 +1,11 @@
+<a name="v1.2.1"></a>
+### v1.2.1 (2013-12-08)
+
+
+#### Features
+
+* **styles:** Add text-align utility classes ([4a3a3a61](http://github.com/oswaldoacauan/ghostium/commit/4a3a3a611c003fbba701aec8c987b053c3d378c4))
+
 <a name="v1.2.0"></a>
 ## v1.2.0 (2013-12-08)
 
