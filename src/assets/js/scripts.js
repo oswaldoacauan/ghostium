@@ -1,4 +1,4 @@
-/* global disqus_identifier:false, ga:false, Drawer: false, ImageLoader: false, NProgress: false, Prism: false */
+/* global FastClick: false, DISQUS: false, DISQUSWIDGETS: false, disqus_identifier:false, ga:false, Drawer: false, ImageLoader: false, NProgress: false, Prism: false */
 (function ($, window, document, undefined) {
 
   'use strict';
