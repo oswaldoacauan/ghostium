@@ -16,6 +16,8 @@
     <meta name="description" content="{{meta_description}}">
 
     <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{{meta_title}}">
+    <meta name="twitter:description" content="{{meta_description}}">
 
     <meta property="og:type" content="article">
     <meta property="og:title" content="{{meta_title}}">
@@ -27,11 +29,11 @@
     <link href="/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
 
     <link href="//fonts.googleapis.com/" rel="dns-prefetch">
-    <link href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Open+Sans:700,400" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Open+Sans:700,400&subset=latin,latin-ext" rel="stylesheet">
 
-    <link rel="stylesheet" href="/assets/css/673ad9ab.main.min.css"/>
+    <link rel="stylesheet" href="/assets/css/ca73bfca.main.min.css"/>
 
-    <script src="/assets/js/e427151d.head-scripts.min.js"></script>
+    <script src="/assets/js/a03b5437.head-scripts.min.js"></script>
 
     {{ghost_head}}
   </head>
@@ -52,7 +54,7 @@
 
     {{ghost_foot}}
 
-    <script src="/assets/js/b785c374.foot-scripts.min.js"></script>
+    <script src="/assets/js/a942c422.foot-scripts.min.js"></script>
 
     <script type="text/javascript">
       {{> custom/config}}
@@ -67,7 +69,7 @@
       (function () {
       var s = document.createElement('script'); s.async = true;
       s.type = 'text/javascript';
-      s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+      s.src = '//' + disqus_shortname + '.disqus.com/count.js';
       (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
       }());
     </script>

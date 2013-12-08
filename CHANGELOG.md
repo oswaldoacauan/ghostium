@@ -1,3 +1,25 @@
+<a name="v1.2.0"></a>
+## v1.2.0 (2013-12-08)
+
+
+#### Bug Fixes
+
+* Fix twitter card meta-tags data ([62753d6b](http://github.com/oswaldoacauan/ghostium/commit/62753d6bf6c84bd44c71da6df1d53680d2a2e368))
+* **pjax:** Fix back/foward #1 ([0212b437](http://github.com/oswaldoacauan/ghostium/commit/0212b4370b9e02b0cc234c28b300f0c5b12dff2d))
+* **scripts:** Fix not highlight without/invalid language ([8ab92557](http://github.com/oswaldoacauan/ghostium/commit/8ab92557ee5e782257658cc857c3363324b3c996))
+* **templates:**
+  * Only show pagination if it exists ([4c777533](http://github.com/oswaldoacauan/ghostium/commit/4c77753341027ccd5d0230138ee988b62f59219a))
+  * Only show tags when have one ([e32e4f43](http://github.com/oswaldoacauan/ghostium/commit/e32e4f43ce4ded9766fe99d840e7fac97e0a95e0))
+  * Add missing [data-pjax] attributes ([fa869766](http://github.com/oswaldoacauan/ghostium/commit/fa86976689af771639b2b00edfed9a391c2d1a78))
+
+
+#### Features
+
+* Add FastClick plugin. Close #14 ([dc02d8ac](http://github.com/oswaldoacauan/ghostium/commit/dc02d8ac7a6644d0ac9e09c900d2297a22b05073))
+* **drawer:** Completely new design #10 ([e97820be](http://github.com/oswaldoacauan/ghostium/commit/e97820beecaa3c1e2e633323c64eab078743aad1))
+* **styles:** Add more author info on post. Close #18 ([c0e60856](http://github.com/oswaldoacauan/ghostium/commit/c0e6085665def13056478e75b78011d70cc168fb))
+* **template:** Add a custom feature partial ([87b9d565](http://github.com/oswaldoacauan/ghostium/commit/87b9d56535c0a3ebe37c9a058f3503b7f8ecec9c))
+
 <a name="v1.1.1"></a>
 ### v1.1.1 (2013-11-17)
 
