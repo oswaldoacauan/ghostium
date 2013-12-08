@@ -1,5 +1,5 @@
 .drawer {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
@@ -9,7 +9,7 @@
 
 .drawer-overlay {
   display: none;
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   right: 0;
@@ -24,7 +24,7 @@
 }
 
 .drawer-button {
-  position: absolute;
+  position: fixed;
   top: 10px;
   left: 10px;
   width: 45px;
@@ -45,10 +45,16 @@
     outline: 0;
   }
 
-  &.drawer-button-hidden,
   .drawer-transition & {
     opacity: 0;
     pointer-events: none;
+  }
+
+  &.drawer-button-hidden {
+    @include breakpoint(small) {
+      opacity: 0;
+      pointer-events: none;
+    }
   }
 
   .drawer-open & {
