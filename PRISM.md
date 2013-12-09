@@ -16,12 +16,6 @@ sudo npm install
 
 These commands should solve all dependencies needed.
 
-### Download Prism
-
-Now, go to the [Prism.js download page](http://prismjs.com/download.html) and configure Prism to your liking.
-Then, download both the `css` and `js` generated at the bottom of the page.
-Place these files in `ghostium/src/assets/_components/prismjs/`, replacing the ones downloaded by bower.
-
 ### Edit src/default.hbs
 
 Next it's time to edit `src/default.hbs` like so:
@@ -33,17 +27,10 @@ Next it's time to edit `src/default.hbs` like so:
     <!-- endbuild -->
 ```
 
-### Copy New Build
+### Build and Copy
 
-Now, within the ghostium root directory run `grunt`. This will compile minified `css` and `js` within the build directory.
+Within the ghostium root directory run `grunt dryrun`. This will compile new minified `css` and `js`.
 
-All that is left to do now is to copy the build directory to the ghostium root directory. This can be done by running:
-
-```
-cd build
-cp -r * ..
-```
-
-This replaces all the files built formerly without the support for other languages, and that's it!
+This also replaces all the files built formerly without the support for other languages, and that's it!
 
 Note: If doing this within the already installed ghostium theme, you must restart Ghost for the changes to take effect.
