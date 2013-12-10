@@ -51,6 +51,6 @@
   },
   "scripts": {
     "test": "grunt --verbose",
-    "postinstall": "bower install"
+    "postinstall": "bundle install && bower install"
   }
 }
