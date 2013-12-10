@@ -1,4 +1,4 @@
-# Ghostium
+# Ghostium [![Build Status](https://travis-ci.org/oswaldoacauan/ghostium.png)](https://travis-ci.org/oswaldoacauan/ghostium)
 
 ![Ghostium](http://i.imgur.com/m5VcTBl.png)
 
