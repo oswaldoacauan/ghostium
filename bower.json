@@ -22,6 +22,6 @@
     "font-awesome": "~4.0.1",
     "jquery-pjax": "~1.7.3",
     "nprogress": "~0.1.2",
-    "prism": "git@github.com:LeaVerou/prism.git#gh-pages"
+    "prism": "git://git@github.com:LeaVerou/prism.git#gh-pages"
   }
 }
