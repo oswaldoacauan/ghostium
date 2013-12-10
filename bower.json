@@ -18,6 +18,7 @@
     "src/assets/_components"
   ],
   "devDependencies": {
+    "fastclick": "~0.6.10",
     "font-awesome": "~4.0.1",
     "jquery-pjax": "~1.7.3",
     "nprogress": "~0.1.2",
