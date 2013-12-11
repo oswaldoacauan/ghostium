@@ -334,22 +334,6 @@ module.exports = function(grunt) {
     },
 
     /**
-     * Run SASS and image/svg minification tasks at same time
-     */
-    concurrent: {
-      options: {
-        logConcurrentOutput: true
-      },
-      build: {
-        tasks: [
-          'imagemin:build',
-          'svgmin:build',
-          'autoprefixer:build'
-        ]
-      },
-    },
-
-    /**
      * Bump version on package.json and bower.json
      */
     push: {
@@ -413,7 +397,9 @@ module.exports = function(grunt) {
     'rev',
     'copy:build',
     'usemin',
-    'concurrent:build',
+    'imagemin:build',
+    'svgmin:build',
+    'autoprefixer:build',
     'csso:build'
   ]);
 
