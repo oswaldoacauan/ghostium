@@ -2,12 +2,14 @@ code[class*="language-"],
 pre[class*="language-"] {
   font-size: 80%;
   max-width: 100%;
-  word-wrap: break-word;
-  word-break: break-all;
+  word-wrap: break-word; // allow wrapping within content blocks
+  word-break: break-all; // allow wrapping within content blocks
 }
 
 pre[class*="language-"] code[class*="language-"] {
   font-size: inherit;
+  word-wrap: normal; // prohibit wrapping within code blocks; scroll x overflow
+  word-break: normal; // prohibit wrapping within code blocks; scroll x overflow
 }
 
 pre[class*="language-"] {
