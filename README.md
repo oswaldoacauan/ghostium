@@ -1,4 +1,4 @@
-# Ghostium [![Build Status](https://travis-ci.org/oswaldoacauan/ghostium.png)](https://travis-ci.org/oswaldoacauan/ghostium)
+# Ghostium [![Build Status](https://travis-ci.org/oswaldoacauan/ghostium.png)](https://travis-ci.org/oswaldoacauan/ghostium)[![Total views](https://sourcegraph.com/api/repos/github.com/oswaldoacauan/ghostium/counters/views.png)](https://sourcegraph.com/github.com/oswaldoacauan/ghostium)
 
 ![Ghostium](http://i.imgur.com/m5VcTBl.png)
 
