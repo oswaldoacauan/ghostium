@@ -11,6 +11,7 @@ pre[class*="language-"] code[class*="language-"] {
   font-size: inherit;
   word-wrap: normal; // prohibit wrapping within code blocks; scroll x overflow
   word-break: normal; // prohibit wrapping within code blocks; scroll x overflow
+  white-space: pre; // prohibit wrapping within code blocks; scroll x overflow
 }
 
 pre[class*="language-"] {
