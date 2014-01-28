@@ -1,3 +1,11 @@
+<a name="v2.0.1"></a>
+### v2.0.1 (2014-01-27)
+
+
+#### Bug Fixes
+
+* **templates:** Fix express-hbs 404 issue introduced with Ghost 0.4. See #47 ([ce92314c](http://github.com/oswaldoacauan/ghostium/commit/ce92314c0a5576f3c84134db27ba009cc066580a))
+
 <a name="v2.0.0"></a>
 ## v2.0.0 (2014-01-27)
 
