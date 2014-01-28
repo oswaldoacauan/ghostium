@@ -1,3 +1,12 @@
+<a name="v2.0.0"></a>
+## v2.0.0 (2014-01-27)
+
+
+#### Bug Fixes
+
+* Add bundler install as npm install postinstall cmd ([e7e3c2d9](http://github.com/oswaldoacauan/ghostium/commit/e7e3c2d9875b7f98a7505c2d0e2fbc13dd9c945e))
+* **bower:** Fix Prism issue dependencie. Rel #27, #33 ([f6aba3ef](http://github.com/oswaldoacauan/ghostium/commit/f6aba3efa4de5cf1a20213edfe997a5f8b45d398))
+
 <a name="v1.2.1"></a>
 ### v1.2.1 (2013-12-08)
 
