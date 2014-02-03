@@ -1,3 +1,11 @@
+<a name="v2.0.2"></a>
+### v2.0.2 (2014-02-03)
+
+
+#### Bug Fixes
+
+* **scripts:** Add correct focus on page load. Close #58 ([58ae72b3](http://github.com/oswaldoacauan/ghostium/commit/58ae72b3b29ff1b32f38fd6728b7c8d65044ed8f))
+
 <a name="v2.0.1"></a>
 ### v2.0.1 (2014-01-27)
 
