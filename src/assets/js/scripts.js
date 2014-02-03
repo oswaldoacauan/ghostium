@@ -178,6 +178,12 @@
     // =================
     $surface.on('touchstart', function(e) {});
 
+    // Fix keyboard scrolling not working when page load
+    // =================
+    if($body.hasClass('home-template')) {
+      $('.wrapper').eq(0).focus();
+    }
+
   });
 
 })(jQuery, window, document);
