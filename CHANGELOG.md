@@ -1,3 +1,11 @@
+<a name="v2.1.0"></a>
+## v2.1.0 (2014-03-07)
+
+
+#### Bug Fixes
+
+* **template:** Start using {{asset}} Ghost helper. Close #61 ([d26b7063](http://github.com/oswaldoacauan/ghostium/commit/d26b706391f8866e38b8a47efb39cd9767c20942))
+
 <a name="v2.0.2"></a>
 ### v2.0.2 (2014-02-03)
 
