@@ -291,6 +291,20 @@ module.exports = function(grunt) {
     },
 
     /**
+     * Replace html assets path to Ghost handlebars {{assets}} helper
+     */
+    replace: {
+      build: {
+        src: ['<%= dir.build %>/**/*.hbs'],
+        overwrite: true,
+        replacements: [{
+          from: /[\"\']\/assets\/(.*?)[\"\']/gi,
+          to: '"{{asset \'$1\'}}"'
+        }]
+      }
+    },
+
+    /**
      * Copy all files to build/release folder
      */
     copy: {
@@ -397,6 +411,7 @@ module.exports = function(grunt) {
     'rev',
     'copy:build',
     'usemin',
+    'replace:build',
     'imagemin:build',
     'svgmin:build',
     'autoprefixer:build',
