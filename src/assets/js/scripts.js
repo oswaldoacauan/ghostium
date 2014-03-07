@@ -39,6 +39,19 @@
 
     _prismHandler();
 
+    // Reset DISQUS
+    // =================
+    var _resetDisqus = function() {
+      if(typeof DISQUS === 'object' && $('#disqus_thread').length) {
+        DISQUS.reset({
+          reload: true,
+          config: function () {
+            this.page.identifier = disqus_identifier;
+          }
+        });
+      }
+    };
+
     // PJax bindings
     // =================
     if ($.support.pjax) {
@@ -53,14 +66,7 @@
           ga('send', 'pageview');
         }
 
-        if(typeof DISQUS === 'object' && $('#disqus_thread').length) {
-          DISQUS.reset({
-            reload: true,
-            config: function () {
-              this.page.identifier = disqus_identifier;
-            }
-          });
-        }
+        _resetDisqus();
 
         if(typeof DISQUSWIDGETS === 'object') {
           DISQUSWIDGETS.getCount();
@@ -183,6 +189,12 @@
     if($body.hasClass('home-template')) {
       $('.wrapper').eq(0).focus();
     }
+
+    // Fix DISQUS iframe does not resize on mobile orientation change
+    // =================
+    $window.on('orientationchange', function(e) {
+      _resetDisqus();
+    });
 
   });
 
