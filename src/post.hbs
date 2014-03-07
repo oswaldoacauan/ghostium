@@ -104,5 +104,8 @@
     s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
+    window.addEventListener('orientationchange', function() {
+      DISQUS.reset({reload:true});
+    }, false);
   }
 </script>
