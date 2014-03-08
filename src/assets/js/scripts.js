@@ -50,6 +50,14 @@
           }
         });
       }
+
+      if(typeof DISQUSWIDGETS === 'object') {
+        DISQUSWIDGETS = undefined;
+        var countjs = $html.find('head script[src*="disqus.com/count.js"]').remove();
+        $('<script async type="text/javascript">').attr({
+          src: countjs.attr('src')
+        }).appendTo('head');
+      }
     };
 
     // PJax bindings
@@ -67,10 +75,6 @@
         }
 
         _resetDisqus();
-
-        if(typeof DISQUSWIDGETS === 'object') {
-          DISQUSWIDGETS.getCount();
-        }
 
         $('[data-load-image]', $content).each(function() {
           ImageLoader.load($(this));
