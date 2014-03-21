@@ -73,7 +73,7 @@ Configurable meta tags.
 
 #### navigation.hbs
 
-Your site navigation items, markup template bellow.
+Your site navigation items, markup template below.
 ```html
 <li class="drawer-list-item">
   <a href="#" title="My awesome menu">
