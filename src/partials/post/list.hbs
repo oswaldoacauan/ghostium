@@ -20,8 +20,8 @@
       {{#if tags}}
         <li class="post-item-meta-item">
           {{#foreach tags}}
-            <span itemprop="{{#if @first}}articleSection{{else}}keywords{{/if}}">{{name}}</span>
-            {{#if @last}} {{else}}, {{/if}}
+            <a itemprop="{{#if @first}}articleSection{{else}}keywords{{/if}}" href="{{url}}">{{name}}</a>
+            {{~#if @last}} {{else}}, {{/if}}
           {{/foreach}}
         </li>
       {{/if}}
