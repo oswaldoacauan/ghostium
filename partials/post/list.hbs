@@ -20,7 +20,7 @@
       {{#if tags}}
         <li class="post-item-meta-item">
           {{#foreach tags}}
-            <span itemprop="{{#if @first}}articleSection{{else}}keywords{{/if}}">{{name}}</span>
+            <span itemprop="{{#if @first}}articleSection{{else}}keywords{{/if}}"><a href="{{@blog.url}}/tag/{{name}}">{{name}}</a></span>
             {{#if @last}} {{else}}, {{/if}}
           {{/foreach}}
         </li>
