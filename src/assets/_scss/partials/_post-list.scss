@@ -80,7 +80,7 @@
   }
 
   time, span {
-    display: inline-block;
+    display: inline;
   }
 
   @include breakpoint(x-small) {
@@ -129,5 +129,3 @@
   &.post-list-pagination-item-prev { float: left; }
   &.post-list-pagination-item-next { float: right; }
 }
-
-
