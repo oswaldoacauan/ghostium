@@ -1,4 +1,4 @@
-/* global FastClick: false, DISQUS: false, DISQUSWIDGETS: false, disqus_identifier:false, ga:false, Drawer: false, ImageLoader: false, NProgress: false, Prism: false */
+/* global FastClick: false, DISQUS: false, DISQUSWIDGETS: true, disqus_identifier:false, ga:false, Drawer: false, ImageLoader: false, NProgress: false, Prism: false */
 (function ($, window, document, undefined) {
 
   'use strict';
@@ -39,6 +39,27 @@
 
     _prismHandler();
 
+    // Reset DISQUS
+    // =================
+    var _resetDisqus = function() {
+      if(typeof DISQUS === 'object' && $('#disqus_thread').length) {
+        DISQUS.reset({
+          reload: true,
+          config: function () {
+            this.page.identifier = disqus_identifier;
+          }
+        });
+      }
+
+      if(typeof DISQUSWIDGETS === 'object') {
+        DISQUSWIDGETS = undefined;
+        var countjs = $html.find('head script[src*="disqus.com/count.js"]').remove();
+        $('<script async type="text/javascript">').attr({
+          src: countjs.attr('src')
+        }).appendTo('head');
+      }
+    };
+
     // PJax bindings
     // =================
     if ($.support.pjax) {
@@ -53,18 +74,7 @@
           ga('send', 'pageview');
         }
 
-        if(typeof DISQUS === 'object' && $('#disqus_thread').length) {
-          DISQUS.reset({
-            reload: true,
-            config: function () {
-              this.page.identifier = disqus_identifier;
-            }
-          });
-        }
-
-        if(typeof DISQUSWIDGETS === 'object') {
-          DISQUSWIDGETS.getCount();
-        }
+        _resetDisqus();
 
         $('[data-load-image]', $content).each(function() {
           ImageLoader.load($(this));
@@ -183,6 +193,12 @@
     if($body.hasClass('home-template')) {
       $('.wrapper').eq(0).focus();
     }
+
+    // Fix DISQUS iframe does not resize on mobile orientation change
+    // =================
+    $window.on('orientationchange', function(e) {
+      _resetDisqus();
+    });
 
   });
 
