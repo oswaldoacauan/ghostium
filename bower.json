@@ -19,7 +19,7 @@
   ],
   "devDependencies": {
     "fastclick": "~0.6.10",
-    "font-awesome": "~4.0.1",
+    "font-awesome": "~4.1.0",
     "jquery-pjax": "~1.7.3",
     "nprogress": "~0.1.2",
     "prism": "gh-pages"
