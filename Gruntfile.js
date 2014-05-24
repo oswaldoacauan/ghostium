@@ -259,19 +259,6 @@ module.exports = function(grunt) {
     },
 
     /**
-     * Revisioning all static assets
-     */
-    rev: {
-      build: {
-        files: {
-          src: [
-            '<%= dir.build %>/**/*.{js,css,gif,jpg,jpeg,png,svg,webp,eot*,ttf,woff}'
-          ]
-        }
-      }
-    },
-
-    /**
      * Replaces references to non-optimized scripts or stylesheets
      */
     useminPrepare: {
@@ -408,7 +395,6 @@ module.exports = function(grunt) {
     'concat',
     'cssmin',
     'uglify',
-    'rev',
     'copy:build',
     'usemin',
     'replace:build',
