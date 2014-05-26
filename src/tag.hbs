@@ -4,7 +4,10 @@
 
 <section class="wrapper" tabindex="0">
   <div class="wrapper-container">
-    {{> custom/featured this}}
+    <header>
+      <p><h2>Posts tagged with <i>{{tag.name}}</i></h2></p>
+      <hr>
+    </header>
 
     <section class="post-list">
       {{#foreach posts}}
