@@ -42,7 +42,7 @@
     // DISQUS Handlers
     // =================
     var _disqusHandler = function() {
-      if(!GHOSTIUM.haveDisqus) return;
+      if(!window.GHOSTIUM.haveDisqus) return;
 
       if(typeof DISQUS === 'object' && $('#disqus_thread').length) {
         DISQUS.reset({
@@ -55,13 +55,13 @@
     };
 
     var _disqusCounterHandler = function() {
-      if(!GHOSTIUM.haveDisqus) {
+      if(!window.GHOSTIUM.haveDisqus) {
         $('[data-disqus-identifier]').parent('li').remove();
         return;
       }
 
       if(typeof DISQUSWIDGETS === 'object') {
-        var newScript   = document.createElement("script"),
+        var newScript   = document.createElement('script'),
             countScript = $html.find('head script[src*="disqus.com/count-data.js"]').remove(),
             countSrc    = countScript.get(0).src.split('?')[0],
             posts       = $html.find('[data-disqus-identifier]'),
@@ -73,8 +73,8 @@
         postsArr.sort();
 
         if(postsArr.length) {
-          newScript.async = true
-          newScript.src = countSrc + '?' + postsArr.join("&");
+          newScript.async = true;
+          newScript.src = countSrc + '?' + postsArr.join('&');
 
           $html.find('head').append(newScript);
 
@@ -83,18 +83,18 @@
       }
     };
 
-    _disqusCounterHandler()
+    _disqusCounterHandler();
 
     // GA Handler
     // =================
     var _gaHandler = function() {
-      if(!GHOSTIUM.haveGA) return;
+      if(!window.GHOSTIUM.haveGA) return;
 
       if(typeof ga === 'function') {
         ga('set', 'location', window.location.href);
         ga('send', 'pageview');
       }
-    }
+    };
 
     // PJax bindings
     // =================
