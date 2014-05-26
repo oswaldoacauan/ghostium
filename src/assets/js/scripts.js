@@ -50,13 +50,29 @@
           }
         });
       }
+    };
 
+    var _loadDisqusCounter = function() {
       if(typeof DISQUSWIDGETS === 'object') {
-        DISQUSWIDGETS = undefined;
-        var countjs = $html.find('head script[src*="disqus.com/count.js"]').remove();
-        $('<script async type="text/javascript">').attr({
-          src: countjs.attr('src')
-        }).appendTo('head');
+        var newScript   = document.createElement("script"),
+            countScript = $html.find('head script[src*="disqus.com/count-data.js"]').remove(),
+            countSrc    = countScript.get(0).src.split('?')[0],
+            posts       = $html.find('[data-disqus-identifier]'),
+            postsArr    = [];
+
+        posts.each(function(i, el) {
+          postsArr.push('1=' + encodeURIComponent($(el).data('disqus-identifier')));
+        });
+        postsArr.sort();
+
+        if(postsArr.length) {
+          newScript.async = true
+          newScript.src = countSrc + '?' + postsArr.join("&");
+
+          $html.find('head').append(newScript);
+
+          DISQUSWIDGETS.getCount();
+        }
       }
     };
 
@@ -75,6 +91,7 @@
         }
 
         _resetDisqus();
+        _loadDisqusCounter();
 
         $('[data-load-image]', $content).each(function() {
           ImageLoader.load($(this));
