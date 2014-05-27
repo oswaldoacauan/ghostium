@@ -15,12 +15,13 @@
               {{#if tags}}
                 <li class="post-meta-item">
                   {{#foreach tags}}
-                    <span itemprop="{{#if @first}}articleSection{{else}}keywords{{/if}}">{{name}}</span>
+                    <a itemprop="{{#if @first}}articleSection{{else}}keywords{{/if}}" href="{{url}}" data-pjax>{{name}}</a>
+                    {{~#if @last}} {{else}}, {{/if}}
                   {{/foreach}}
                 </li>
               {{/if}}
               <li class="post-meta-item">
-                <a href="#disqus_thread" data-disqus-identifier="{{id}}"></a>
+                <a href="#disqus_thread" data-disqus-identifier="{{id}}">Comments</a>
               </li>
             </ul>
             <h1 itemprop="name headline" class="post-title"><a href="{{url}}" itemprop="url" data-pjax title="{{{title}}}">{{{title}}}</a></h1>
@@ -91,18 +92,20 @@
 </section>
 
 <script type="text/javascript">
-  {{> custom/config}}
-
-  {{#post}}
+  if(GHOSTIUM.haveDisqus) {
+    {{#post}}
     var disqus_identifier = '{{id}}';
-  {{/post}}
+    {{/post}}
 
-  if(typeof DISQUS !== 'object') {
-    (function () {
-    var s = document.createElement('script'); s.async = true;
-    s.type = 'text/javascript';
-    s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-    }());
+    if(typeof DISQUS !== 'object') {
+      (function () {
+      var s = document.createElement('script'); s.async = true;
+      s.type = 'text/javascript';
+      s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+      }());
+    }
+  } else {
+    document.querySelector('.post-comments').remove();
   }
 </script>

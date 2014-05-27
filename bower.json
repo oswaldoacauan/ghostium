@@ -1,6 +1,6 @@
 {
   "name": "Ghostium",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "dependencies": {
     "modernizr": "~2.6.2",
     "jquery": "~2.0.3"

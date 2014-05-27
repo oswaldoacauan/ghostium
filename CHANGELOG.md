@@ -1,3 +1,29 @@
+<a name="v2.2.0"></a>
+## v2.2.0 (2014-05-27)
+
+
+#### Bug Fixes
+
+* **css:** Remove nprogress sass file ([c2574de7](http://github.com/oswaldoacauan/ghostium/commit/c2574de73c9a37cbcb34e66b57a74c1cdee2ba14))
+* **js:** Changed disqus comment counter load method. ([48a5df7a](http://github.com/oswaldoacauan/ghostium/commit/48a5df7a3ec24ad91e60cfb9e81ced78e785a5b5), closes [#35](http://github.com/oswaldoacauan/ghostium/issues/35))
+* **templates:**
+  * Add missing data-pjax on tag anchors ([52bdb5cb](http://github.com/oswaldoacauan/ghostium/commit/52bdb5cbcfdbee82de93d3c42dc231e422c2f756))
+  * Add tag link on post template. ([2ff121c3](http://github.com/oswaldoacauan/ghostium/commit/2ff121c3f536d8f5b7fab2a9672cccd2ac12dc94), closes [#92](http://github.com/oswaldoacauan/ghostium/issues/92))
+
+
+#### Features
+
+* Capitalize project name ([51eecc17](http://github.com/oswaldoacauan/ghostium/commit/51eecc17d3d6f1acf037db1bf1c34626b7d6abbe))
+* **js:**
+  * Add config to disable asynchronous content loading ([f7945053](http://github.com/oswaldoacauan/ghostium/commit/f7945053db884774f6644d2dcbc0a4f81a0d3d16))
+  * Replace NProgress with Pace. ([f0a4adf4](http://github.com/oswaldoacauan/ghostium/commit/f0a4adf4463677c73826feded2167e43c789b055), closes [#42](http://github.com/oswaldoacauan/ghostium/issues/42))
+  * Only load GA/Disqus when they are setted. Close #45 ([0872d9d5](http://github.com/oswaldoacauan/ghostium/commit/0872d9d55ffc1ccb9fb3aa0f5e1f6fb90f68a0b2))
+  * Add all PrismJS language support and autolink plugin. ([248bd2a4](http://github.com/oswaldoacauan/ghostium/commit/248bd2a4e86d22021cf53905bec34cc19bb5510c), closes [#94](http://github.com/oswaldoacauan/ghostium/issues/94))
+* **styles:** Add a background color on cover ([1b7936a1](http://github.com/oswaldoacauan/ghostium/commit/1b7936a1e2f98821346a2fede74ad7f3d0f585b1))
+* **templates:**
+  * Add a tip with FontAwesome cheatsheet link ([859f74cc](http://github.com/oswaldoacauan/ghostium/commit/859f74cc3a08e261df8025a3d248422842e14ba6))
+  * Add new tag template ([e297b2cd](http://github.com/oswaldoacauan/ghostium/commit/e297b2cdad7690fc52a325c8502ffcc39a7219a6))
+
 <a name="v2.1.1"></a>
 ### v2.1.1 (2014-03-08)
 
