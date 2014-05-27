@@ -4,6 +4,7 @@
   'use strict';
 
   $(function () {
+    var GHOSTIUM = window.GHOSTIUM;
 
     // Cache a couple of useful elements
     // =================
@@ -42,7 +43,7 @@
     // DISQUS Handlers
     // =================
     var _disqusHandler = function() {
-      if(!window.GHOSTIUM.haveDisqus) return;
+      if(!GHOSTIUM.haveDisqus) return;
 
       if(typeof DISQUS === 'object' && $('#disqus_thread').length) {
         DISQUS.reset({
@@ -55,7 +56,7 @@
     };
 
     var _disqusCounterHandler = function() {
-      if(!window.GHOSTIUM.haveDisqus) {
+      if(!GHOSTIUM.haveDisqus) {
         $('[data-disqus-identifier]').parent('li').remove();
         return;
       }
@@ -88,7 +89,7 @@
     // GA Handler
     // =================
     var _gaHandler = function() {
-      if(!window.GHOSTIUM.haveGA) return;
+      if(!GHOSTIUM.haveGA) return;
 
       if(typeof ga === 'function') {
         ga('set', 'location', window.location.href);
@@ -98,7 +99,7 @@
 
     // PJax bindings
     // =================
-    if ($.support.pjax) {
+    if ($.support.pjax && GHOSTIUM.enablePjax) {
       $document.on('pjax:start', function() {
         $surface.scrollTop(0);
       });
