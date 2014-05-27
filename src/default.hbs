@@ -33,23 +33,36 @@
 
     <!-- build:css({src,.tmp}) /assets/css/main.min.css -->
     <link href="/assets/_components/font-awesome/css/font-awesome.css">
-    <link href="/assets/_components/nprogress/nprogress.css">
     <link href="/assets/_components/prism/themes/prism.css">
     <link href="/assets/_components/prism/plugins/autolinker/prism-autolinker.css">
+    <link href="/assets/_components/pace/themes/pace-theme-minimal.css">
     <link href="/assets/css/style.css">
-    <!-- endbuild -->
-
-    <!-- build:js /assets/js/head-scripts.min.js -->
-    <script src="/assets/_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
 
     <script type="text/javascript">
       {{> custom/config}}
 
+      // Pace Options
+      // ==============
+      window.paceOptions = {
+        catchupTime: 100,
+        minTime: 100,
+        elements: false,
+        restartOnRequestAfter: 500,
+        startOnPageLoad: false
+      }
+
+      // Ghostium Globals
+      // ==============
       window.GHOSTIUM = {};
       GHOSTIUM.haveGA = typeof ga_ua !== 'undefined' && ga_ua !== 'UA-XXXXX-X';
       GHOSTIUM.haveDisqus = typeof disqus_shortname !== 'undefined' && disqus_shortname !== 'example';
     </script>
+
+    <!-- build:js /assets/js/head-scripts.min.js -->
+    <script src="/assets/_components/modernizr/modernizr.js"></script>
+    <script src="/assets/_components/pace/pace.js"></script>
+    <!-- endbuild -->
 
     {{ghost_head}}
   </head>
@@ -72,7 +85,6 @@
 
     <!-- build:js /assets/js/foot-scripts.min.js -->
     <script src="/assets/_components/fastclick/lib/fastclick.js"></script>
-    <script src="/assets/_components/nprogress/nprogress.js"></script>
 
     <!-- PrismJS core, aditional languages and plugins -->
     <script src="/assets/_components/prism/prism.js"></script>

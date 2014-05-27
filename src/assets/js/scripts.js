@@ -1,4 +1,4 @@
-/* global FastClick: false, DISQUS: false, DISQUSWIDGETS: true, disqus_identifier:false, ga:false, Drawer: false, ImageLoader: false, NProgress: false, Prism: false */
+/* global FastClick: false, DISQUS: false, DISQUSWIDGETS: true, disqus_identifier:false, ga:false, Drawer: false, ImageLoader: false, Prism: false */
 (function ($, window, document, undefined) {
 
   'use strict';
@@ -100,7 +100,6 @@
     // =================
     if ($.support.pjax) {
       $document.on('pjax:start', function() {
-        NProgress.start();
         $surface.scrollTop(0);
       });
 
@@ -113,8 +112,6 @@
         $('[data-load-image]', $content).each(function() {
           ImageLoader.load($(this));
         });
-
-        NProgress.done();
       });
 
       var _pjaxOptions = {

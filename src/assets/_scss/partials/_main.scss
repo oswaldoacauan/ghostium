@@ -16,9 +16,13 @@ body {
   backface-visibility: hidden;
   opacity: 1;
 
-  .nprogress-busy & {
+  .pace-running & {
     transition-delay: .1s;
-    opacity: 0;
+    //opacity: 0;
+  }
+
+  .pace-done & {
+    //opacity: 1;
   }
 
   .drawer-transition & {
