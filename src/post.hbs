@@ -15,7 +15,7 @@
               {{#if tags}}
                 <li class="post-meta-item">
                   {{#foreach tags}}
-                    <a itemprop="{{#if @first}}articleSection{{else}}keywords{{/if}}" href="{{url}}">{{name}}</a>
+                    <a itemprop="{{#if @first}}articleSection{{else}}keywords{{/if}}" href="{{url}}" data-pjax>{{name}}</a>
                     {{~#if @last}} {{else}}, {{/if}}
                   {{/foreach}}
                 </li>
