@@ -1,3 +1,11 @@
+<a name="v2.2.1"></a>
+### v2.2.1 (2014-05-27)
+
+
+#### Bug Fixes
+
+* **js:** Enable Pjax when config is missing  (backward compatibility) ([c0379189](http://github.com/oswaldoacauan/ghostium/commit/c03791891b024212506d3b19ef66d1b31e4f9402))
+
 <a name="v2.2.0"></a>
 ## v2.2.0 (2014-05-27)
 
