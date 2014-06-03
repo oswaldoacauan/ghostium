@@ -17,6 +17,10 @@
   overflow: hidden;
   z-index: 1;
 
+  a, a:hover, a:focus, .post-meta-item {
+    color: white;
+  }
+
   div {
     display: table-cell;
     height: 100%;
@@ -28,10 +32,6 @@
       max-width: 700px;
       margin: 0 auto;
     }
-  }
-
-  a {
-    color: white;
   }
 
   .fa-angle-down {
