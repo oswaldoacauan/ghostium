@@ -38,7 +38,7 @@
           $postImage.css('background-image', 'url(' + $img.attr('src') + ')');
 
           // if img is only child, parent is probably a <p/>
-          if ($img.is(":only-child")) {
+          if ($img.is(':only-child')) {
             $img.parent().remove();
           } else {
             $img.remove();
