@@ -1,14 +1,49 @@
-.post {
-  @include breakpoint(small) {
-    padding-top: 30px;
-  }
-}
-
 .post-container {
   position: relative;
 }
 
 .post-header {}
+
+.post-image {
+  background: {
+    color: #000;
+    position: 50% 50%;
+    size: cover;
+  }
+
+  display: table;
+  width: 100%;
+  color: white;
+  overflow: hidden;
+  z-index: 1;
+
+  div {
+    display: table-cell;
+    height: 100%;
+    padding: 65px 20px;
+    text-shadow: 0 5px 20px rgba(black, .5);
+    vertical-align: bottom;
+
+    header {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+  }
+
+  a {
+    color: white;
+  }
+
+  .fa-angle-down {
+    font-size: 32px;
+    margin: 64px auto 0;
+    color: rgba(255,255,255,0.75);
+
+    &:hover {
+      color: #fff;
+    }
+  }
+}
 
 .post-meta-list {
   @extend .post-item-meta-list;

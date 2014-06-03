@@ -7,7 +7,7 @@
     var GHOSTIUM = window.GHOSTIUM;
 
     // Cache a couple of useful elements
-    // =================
+    // =================================
     var $window   = $(window),
         $document = $(document),
         $html     = $(document.documentElement),
@@ -16,12 +16,63 @@
         $content  = $('.content', $surface);
 
     // FastClick bindings
-    // =================
+    // ==================
     FastClick.attach(document.body);
 
     // Drawer bindings
-    // =================
+    // ===============
     Drawer.init();
+
+    // Article image handler
+    // =====================
+    var _articleImageHandler = function() {
+      $('.post').each(function() {
+        var $post       = $(this),
+            $postHeader = $post.find('.post-header'),
+            $postBody   = $post.find('.post-body'),
+            $postImage  = $post.find('.post-image'),
+            $img        = $postBody.find('img[src]');
+
+        if (!$postImage.find('img').length && $img.length) {
+          $postImage.css('background-image', 'url(' + $img.attr('src') + ')');
+
+          // if img is only child, parent is probably a <p/>
+          if ($img.is(":only-child")) {
+            $img.parent().remove();
+          } else {
+            $img.remove();
+          }
+        }
+
+        // grab first <p/> and move it into the header
+        $postBody.find('p:first').detach().insertAfter($postHeader.find('h1'));
+
+        $window.on('resize', function() {
+          $postImage.height($window.height());
+        });
+
+        if (!Modernizr.touch) {
+          $window.on('resize scroll', function() {
+            var top = $window.scrollTop();
+
+            if (top < 0 || top > 1500) { return; }
+
+            $postHeader
+              .css('transform', 'translateY(' + top / 10 + 'px)')
+              .css('opacity', 1 - Math.max(top / 700, 0))
+
+              .parent()
+                .css('background', 'rgba(0, 0, 0, ' + Math.max(top / 1400, 0) + ')')
+              .end()
+            ;
+          });
+        }
+
+        $window.trigger('resize');
+      });
+    };
+
+    _articleImageHandler();
 
     // PrismJS handler
     // =================
@@ -105,6 +156,7 @@
       });
 
       $document.on('pjax:end', function() {
+        _articleImageHandler();
         _disqusHandler();
         _gaHandler();
         _disqusCounterHandler();
