@@ -83,14 +83,6 @@
   time, span {
     display: inline-block;
   }
-
-  @include breakpoint(x-small) {
-    //display: block;
-
-    &:before {
-      display: none;
-    }
-  }
 }
 
 .post-list-pagination {
