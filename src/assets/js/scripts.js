@@ -12,6 +12,7 @@
         $document = $(document),
         $html     = $(document.documentElement),
         $body     = $(document.body),
+        $head     = $('head'),
         $surface  = $body,
         $content  = $('.content', $surface);
 
@@ -62,22 +63,24 @@
       }
 
       if(typeof DISQUSWIDGETS === 'object') {
-        var newScript   = document.createElement('script'),
-            countScript = $html.find('head script[src*="disqus.com/count-data.js"]').remove(),
-            countSrc    = countScript.get(0).src.split('?')[0],
-            posts       = $html.find('[data-disqus-identifier]'),
-            postsArr    = [];
+        var $identifiers = $body.find('[data-disqus-identifier]'),
+            $script      = $head.find('script[src*="disqus.com/count-data.js"]');
 
-        posts.each(function(i, el) {
-          postsArr.push('1=' + encodeURIComponent($(el).data('disqus-identifier')));
-        });
-        postsArr.sort();
+        var posts = $identifiers
+          .map(function() {
+            return '1=' + encodeURIComponent($(this).data('disqus-identifier'));
+          })
+          .sort()
+          .get()
+        ;
 
-        if(postsArr.length) {
-          newScript.async = true;
-          newScript.src = countSrc + '?' + postsArr.join('&');
+        $script.remove();
 
-          $html.find('head').append(newScript);
+        if(posts.length) {
+          $head.append($('<script/>', {
+            async: true,
+            src: $script.attr('src').split('?')[0] + '?' + posts.join('&')
+          }));
 
           DISQUSWIDGETS.getCount();
         }
