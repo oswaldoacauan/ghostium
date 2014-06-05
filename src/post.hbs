@@ -13,20 +13,22 @@
           <!--h2 itemprop="about" class="post-subtitle"></h2-->
 
           <ul class="post-meta-list">
-            <li class="post-meta-item">
+            <li class="post-meta-item post-meta-item-date-published">
               <time datetime="{{date published_at format="YYYY-MM-DD"}}" itemprop="datePublished">
                 {{date published_at timeago="true"}}
               </time>
             </li>
             {{#if tags}}
-              <li class="post-meta-item">
+              <li class="post-meta-item post-meta-item-tags">
+                <i class="fa fa-tags"></i>
                 {{#foreach tags}}
                   <a itemprop="{{#if @first}}articleSection{{else}}keywords{{/if}}" href="{{url}}" data-pjax>{{name}}</a>
                   {{~#if @last}} {{else}}, {{/if}}
                 {{/foreach}}
               </li>
             {{/if}}
-            <li class="post-meta-item">
+            <li class="post-meta-item post-meta-item-comments">
+              <i class="fa fa-comments"></i>
               <a href="#disqus_thread" data-disqus-identifier="{{id}}">Comments</a>
             </li>
           </ul>

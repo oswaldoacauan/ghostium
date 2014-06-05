@@ -60,6 +60,7 @@
 
   &:before {
     content: ' · ';
+    margin: 0 .125em;
   }
 
   &:first-child:before {
