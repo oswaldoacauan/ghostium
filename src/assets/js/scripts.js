@@ -54,7 +54,7 @@
 
         // hide year if current
         $('.post-meta-bar').each(function() {
-          $(this).find('time[datetime ^= ' + (new Date).getFullYear() + '] span').addClass('js-hidden')
+          $(this).find('time[datetime ^= ' + new Date().getFullYear() + '] span').addClass('js-hidden')
         });
 
         $window.on('resize', function() {
