@@ -28,7 +28,7 @@ var ReadTime = (function ($) {
               .before(
                 ' ',
                 $('<li/>', {'class': 'post-item-meta-item post-item-meta-item-reading-time'}).append(
-                  $('<i/>', {'class': 'fa fa-bookmark'}), ' ', $readingTimeTarget, ' ', 'read'
+                  $('<i/>', {'class': 'fa fa-book'}), ' ', $readingTimeTarget, ' ', 'read'
                 ),
                 ' '
               )
