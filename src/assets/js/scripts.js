@@ -52,6 +52,11 @@
         // grab first <p/> and move it into the header
         $postBody.find('p:first').detach().insertAfter($postHeader.find('h1'));
 
+        // hide year if current
+        $('.post-meta-bar').each(function() {
+          $(this).find('time[datetime ^= ' + (new Date).getFullYear() + '] span').addClass('js-hidden')
+        });
+
         $window.on('resize', function() {
           $postImage.height($window.height());
         });
