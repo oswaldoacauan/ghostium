@@ -5,17 +5,13 @@ var ReadTime = (function ($) {
     var module = {
       init: function() {
         $('.post').each(function() {
-          var $readingTimeTarget = $('<span/>');
+          var $readingTimeTarget = $('<span/>', {
+            'class': 'post-meta-bar-item post-meta-bar-item-reading-time'
+          });
 
           $(this)
-            .find('.post-meta-item-comments')
-              .before(
-                ' ',
-                $('<li/>', {'class': 'post-meta-item post-meta-item-reading-time'}).append(
-                  $('<i/>', {'class': 'fa fa-bookmark'}), ' ', $readingTimeTarget, ' ', 'read'
-                ),
-                ' '
-              )
+            .find('.post-meta-bar__side--right')
+              .append($readingTimeTarget)
             .end()
 
             .readingTime({
@@ -32,7 +28,7 @@ var ReadTime = (function ($) {
               .before(
                 ' ',
                 $('<li/>', {'class': 'post-item-meta-item post-item-meta-item-reading-time'}).append(
-                  $('<i/>', {'class': 'fa fa-bookmark'}), ' ', $readingTimeTarget, ' ', 'read'
+                  $('<i/>', {'class': 'fa fa-book'}), ' ', $readingTimeTarget, ' ', 'read'
                 ),
                 ' '
               )

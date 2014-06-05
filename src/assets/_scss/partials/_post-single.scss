@@ -2,6 +2,57 @@
   position: relative;
 }
 
+.post-meta-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 16.5px 20px 16.5px 75px;
+  color: rgba(white, .97);
+  font-size: 14px;
+  line-height: 32px;
+  text-shadow: 0 2px 15px rgba(black, .75);
+
+  a {
+    color: rgba(white, .97);
+    text-decoration: none;
+
+    &:hover, &:focus {
+      text-decoration: underline;
+    }
+  }
+
+  .post-meta-bar-author {
+    position: relative;
+    padding-left: 40px;
+
+    img {
+      display: inline;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 32px;
+      height: 32px;
+      margin-top: -16px;
+      border-radius: 16px;
+    }
+  }
+
+  .post-meta-bar__side {
+    border-left: 1px solid rgba(white, .35);
+    padding-left: 16px;
+
+    &.post-meta-bar__side--left {
+      float: left;
+    }
+
+    &.post-meta-bar__side--right {
+      float: right;
+      text-align: right;
+    }
+  }
+}
+
 .post-header {}
 
 .post-image {
