@@ -119,6 +119,34 @@
   }
 }
 
+.post-arrow {
+  display: block;
+  border: 2px solid rgba(white, .35);
+  border-left: 0;
+  border-top: 0;
+  width: 16px;
+  height: 16px;
+  margin: 0 auto;
+  transform: rotate(45deg);
+  cursor: pointer;
+
+  &:hover, &:focus {
+    border-color: rgba(white, .65)
+  }
+
+  // increase click area
+  &:before {
+    position: relative;
+    display: block;
+    width: 64px;
+    height: 64px;
+    bottom: 16px;
+    left: -16px;
+    content: '';
+    transform: rotate(-45deg);
+  }
+}
+
 .post-meta-list {
   @extend .post-item-meta-list;
   line-height: 1;

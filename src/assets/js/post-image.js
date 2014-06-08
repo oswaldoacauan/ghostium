@@ -44,6 +44,15 @@
           });
         }
 
+        // add post-arrow
+        $hContent.append(
+          $('<span/>', {'class': 'post-arrow'}).click(function() {
+            $('html, body').animate(
+              {scrollTop: $('section.wrapper-post').offset().top}, 500
+            );
+          })
+        );
+
         $(document).on('pjax:end', resize);
         $(window).on('resize', resize);
 
