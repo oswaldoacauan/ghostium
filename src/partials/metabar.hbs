@@ -1,0 +1,29 @@
+<div class="metabar metabar--static{{#unless post}} metabar--static--inversed{{/unless}}">
+  <div class="metabar__side metabar__side--left">
+    <button data-action="open-drawer" id="drawer-button" class="drawer-button">
+      <i class="fa fa-bars"></i>
+    </button>
+
+    {{#post}}
+      <a href="{{author.website}}" class="metabar-author">
+        {{#if author.image}}
+          <img src="{{author.image}}" alt="{{author.name}}">
+        {{/if}}
+
+        {{author.name}}<!--
+      --></a>
+
+      {{tags prefix="in " separator=", "}}
+
+      on
+
+      <time datetime="{{date published_at format="YYYY-MM-DD"}}" itemprop="datePublished">
+        {{date published_at format="MMM D"}}<span>, {{date published_at format="YYYY"}}</span>
+      </time>
+    {{/post}}
+  </div>
+
+  <div class="metabar__side metabar__side--right">
+
+  </div>
+</div>

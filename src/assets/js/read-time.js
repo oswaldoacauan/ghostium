@@ -8,20 +8,16 @@
     post: function() {
       var $post = $('.post:not(.post-item)');
 
-      if ($post.length && !$post.find('.post-meta-bar-item-reading-time').length) {
-        var $target;
+      if ($post.length && !$('.metabar-item-reading-time').length) {
+        var $target = $('<span/>', {
+          'class': 'metabar-item metabar-item-reading-time'
+        });
 
-        $post
-          .find('.post-meta-bar__side--right')
-            .append($target = $('<span/>', {
-              'class': 'post-meta-bar-item post-meta-bar-item-reading-time'
-            }))
-          .end()
+        $('.metabar__side--right').append($target);
 
-          .readingTime({
-            readingTimeTarget: $target
-          })
-        ;
+        $post.readingTime({
+          readingTimeTarget: $target
+        });
       }
     },
 

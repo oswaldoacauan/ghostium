@@ -2,72 +2,8 @@
   position: relative;
 }
 
-.post-meta-bar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  padding: 16.5px 20px 16.5px 75px;
-  font-size: 14px;
-  line-height: 32px;
-
-  &, a {
-    color: rgba(black, .3);
-
-    @include post-image {
-      color: rgba(white, .97);
-    }
-  }
-
-  @include post-image {
-    text-shadow: 0 2px 15px rgba(black, .75);
-  }
-
-  a {
-    text-decoration: none;
-
-    &:hover, &:focus {
-      text-decoration: underline;
-    }
-  }
-
-  .post-meta-bar-author {
-    position: relative;
-    padding-left: 40px;
-
-    img {
-      display: inline;
-      position: absolute;
-      top: 50%;
-      left: 0;
-      width: 32px;
-      height: 32px;
-      margin-top: -16px;
-      border-radius: 16px;
-    }
-  }
-
-  .post-meta-bar__side {
-    border-left: 1px solid rgba(black, .05);
-    padding-left: 16px;
-
-    &.post-meta-bar__side--left {
-      float: left;
-    }
-
-    &.post-meta-bar__side--right {
-      float: right;
-      text-align: right;
-    }
-
-    @include post-image {
-      border-color: rgba(white, .35);
-    }
-  }
-}
-
 .post-header {
-  @include post-image {
+  .post--image & {
     background: {
       color: black;
       position: 50% 50%;
@@ -85,7 +21,7 @@
     div {
       padding: 70px 0 0;
 
-      @include post-image {
+      .post--image & {
         display: table-cell;
         height: 100%;
         padding-bottom: 65px;
@@ -102,7 +38,7 @@
     }
   }
 
-  @include post-image {
+  .post--image & {
     a, a:hover, a:focus, .post-meta-item {
       color: white;
     }

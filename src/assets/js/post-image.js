@@ -1,6 +1,7 @@
 (function() {
   $(document).on('ready pjax:end', function() {
-    var $post = $('.post');
+    var $post = $('.post:not(.post-item)'),
+        $metabar = $('.metabar');
 
     if ($post.length && !$post.hasClass('post--image')) {
       var $pBody = $post.find('.post-body'),
@@ -15,6 +16,9 @@
 
         // assign class to post for styling and to prevent re-imaging
         $post.addClass('post--image');
+
+        // invert the metabar
+        $metabar.addClass('metabar--static--inversed');
 
         if (!$header.find('img').length) {
           $header.css('background-image', 'url(' + $pImg.attr('src') + ')');
@@ -57,6 +61,8 @@
         $(window).on('resize', resize);
 
         resize();
+      } else {
+        $metabar.removeClass('metabar--static--inversed');
       }
     }
   });

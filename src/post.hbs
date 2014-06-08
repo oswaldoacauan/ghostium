@@ -1,32 +1,7 @@
 {{!< default}}
 
 {{#post}}
-
   <article itemscope itemtype="http://schema.org/BlogPosting" role="article" class="post {{post_class}}">
-    <div class="post-meta-bar">
-      <div class="post-meta-bar__side post-meta-bar__side--left">
-        <a href="{{author.website}}" class="post-meta-bar-author">
-          {{#if author.image}}
-            <img src="{{author.image}}" alt="{{author.name}}">
-          {{/if}}
-
-          {{author.name}}<!--
-        --></a>
-
-        {{tags prefix="in " separator=", "}}
-
-        on
-
-        <time datetime="{{date published_at format="YYYY-MM-DD"}}" itemprop="datePublished">
-          {{date published_at format="MMM D"}}<span>, {{date published_at format="YYYY"}}</span>
-        </time>
-      </div>
-
-      <div class="post-meta-bar__side post-meta-bar__side--right">
-
-      </div>
-    </div>
-
     <header class="post-header wrapper-post">
       <div>
         <div class="post-header-content wrapper-container">
