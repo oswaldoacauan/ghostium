@@ -15,14 +15,14 @@ $inversed: ".metabar--static.metabar--static--inversed";
   }
 }
 
-@mixin line-before {
+@mixin line-left {
   &:before {
     @include line;
     left: -1px;
   }
 }
 
-@mixin line-after {
+@mixin line-right {
   &:after {
     @include line;
     right: -1px;
@@ -57,10 +57,12 @@ $inversed: ".metabar--static.metabar--static--inversed";
   }
 }
 
-#{$affixed} {
-  position: fixed;
-  background-color: rgba(white, .97);
-  box-shadow: 0 0 1px rgba(black, .15);
+@media (min-width: $breakpoint-x-small) {
+  #{$affixed} {
+    position: fixed;
+    background-color: rgba(white, .97);
+    box-shadow: 0 0 1px rgba(black, .15);
+  }
 }
 
 #{$inversed} {
@@ -76,19 +78,27 @@ $inversed: ".metabar--static.metabar--static--inversed";
   transition-timing-function: ease;
 
   &.metabar__side--left {
-    float: left;
+    @media (min-width: $breakpoint-x-small) {
+      float: left;
+    }
   }
 
   &.metabar__side--right {
-    float: right;
+    display: none;
     text-align: right;
+
+    @media (min-width: $breakpoint-x-small) {
+      display: block;
+      float: right;
+    }
   }
 }
 
 .metabar-item {
-  display: block;
   position: relative;
+  display: block;
   float: left;
+  padding: 8px;
 
   .metabar__side--left & {
     padding: 0 16px;
@@ -108,12 +118,21 @@ $inversed: ".metabar--static.metabar--static--inversed";
 }
 
 .metabar-item--drawer-button {
-  width: 54px;
+  width: 15%;
   height: 44px;
+
+  @media (min-width: $breakpoint-x-small) {
+    width: 54px;
+  }
 }
 
 .metabar-item--post-meta {
-  @include line-before;
+  width: 85%;
+  @include line-left;
+
+  @media (min-width: $breakpoint-x-small) {
+    width: auto;
+  }
 }
 
 .metabar-item--post-meta__author {
@@ -133,7 +152,7 @@ $inversed: ".metabar--static.metabar--static--inversed";
 }
 
 .metabar-item--likes {
-  @include line-after;
+  @include line-right;
 }
 
 .drawer-button {

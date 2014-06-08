@@ -5,6 +5,8 @@ body,
 }
 
 body {
+  min-width: 320px;
+
   &.drawer-transition {
     overflow-x: hidden;
   }
