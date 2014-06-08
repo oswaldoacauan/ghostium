@@ -29,16 +29,16 @@
         // if users is on a non-touch device, bind transitions
         if (!Modernizr.touch) {
           $(window).on('resize scroll', function() {
-            var top = $(window).scrollTop();
+            var y = $(window).scrollTop();
 
-            if (top < 0 || top > 1500) { return; }
+            if (y < 0 || y > $header.height()) { return; }
 
             $hContent
-              .css('transform', 'translateY(' + top / 10 + 'px)')
-              .css('opacity', 1 - Math.max(top / 700, 0))
+              .css('transform', 'translateY(' + y / 10 + 'px)')
+              .css('opacity', 1 - Math.max(y / 700, 0))
 
               .parent()
-                .css('background', 'rgba(0, 0, 0, ' + Math.max(top / 1400, 0) + ')')
+                .css('background', 'rgba(0, 0, 0, ' + Math.max(y / 1400, 0) + ')')
               .end()
             ;
           });
