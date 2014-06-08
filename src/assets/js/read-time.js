@@ -1,49 +1,56 @@
-var ReadTime = (function ($) {
+(function() {
+  var module = {
+    init: function() {
+      module.post();
+      module.list();
+    },
 
-    'use strict';
+    post: function() {
+      var $post = $('.post:not(.post-item)');
 
-    var module = {
-      init: function() {
-        $('.post').each(function() {
-          var $readingTimeTarget = $('<span/>', {
-            'class': 'post-meta-bar-item post-meta-bar-item-reading-time'
-          });
+      if ($post.length && !$post.find('.post-meta-bar-item-reading-time').length) {
+        var $target;
 
-          $(this)
-            .find('.post-meta-bar__side--right')
-              .append($readingTimeTarget)
-            .end()
+        $post
+          .find('.post-meta-bar__side--right')
+            .append($target = $('<span/>', {
+              'class': 'post-meta-bar-item post-meta-bar-item-reading-time'
+            }))
+          .end()
 
-            .readingTime({
-              readingTimeTarget: $readingTimeTarget
-            })
-          ;
-        });
-
-        $('.post-item').each(function() {
-          var $readingTimeTarget = $('<span/>');
-
-          $(this)
-            .find('.post-item-meta-item-comments')
-              .before(
-                ' ',
-                $('<li/>', {'class': 'post-item-meta-item post-item-meta-item-reading-time'}).append(
-                  $('<i/>', {'class': 'fa fa-book'}), ' ', $readingTimeTarget, ' ', 'read'
-                ),
-                ' '
-              )
-            .end()
-
-            .readingTime({
-              readingTimeTarget: $readingTimeTarget,
-              remotePath: $(this).find('.post-item-title a').attr('href'),
-              remoteTarget: '.post'
-            })
-          ;
-        });
+          .readingTime({
+            readingTimeTarget: $target
+          })
+        ;
       }
-    };
+    },
 
-    return { init: module.init };
+    list: function() {
+      $('.post-item').each(function() {
+        var $list = $(this).find('.post-item-meta-list');
 
-}(jQuery));
+        if (!$list.find('.post-item-meta-item-reading-time').length) {
+          var $target      = $('<span/>'),
+              $comments    = $list.find('.post-item-meta-item-comments'),
+              $readingTime = $('<li/>', {'class': 'post-item-meta-item post-item-meta-item-reading-time'}).append(
+                $('<i/>', {'class': 'fa fa-book'}), ' ', $target
+              );
+
+          if ($comments.length) {
+            $comments.before(' ',  $readingTime, ' ');
+          } else {
+            $list.append(' ',  $readingTime, ' ');
+          }
+
+          $(this).readingTime({
+            readingTimeTarget: $target,
+            remotePath: $(this).find('.post-item-title a').attr('href'),
+            remoteTarget: '.post'
+          });
+        }
+      });
+    }
+  };
+
+  $(document).on('ready pjax:end', module.init);
+}());

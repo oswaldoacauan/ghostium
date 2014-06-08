@@ -1,4 +1,4 @@
-/* global FastClick: false, DISQUS: false, DISQUSWIDGETS: true, disqus_identifier:false, ga:false, Drawer: false, ImageLoader: false, Prism: false, ReadTime: false */
+/* global FastClick: false, DISQUS: false, DISQUSWIDGETS: true, disqus_identifier:false, ga:false, Drawer: false, ImageLoader: false, Prism: false */
 (function ($, window, document, undefined) {
 
   'use strict';
@@ -23,10 +23,6 @@
     // Drawer bindings
     // ===============
     Drawer.init();
-
-    // ReadTime bindings
-    // ===============
-    ReadTime.init();
 
     // PrismJS handler
     // =================
@@ -120,8 +116,6 @@
         $('[data-load-image]', $content).each(function() {
           ImageLoader.load($(this));
         });
-
-        ReadTime.init();
       });
 
       var _pjaxOptions = {
