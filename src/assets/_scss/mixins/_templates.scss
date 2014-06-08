@@ -1,0 +1,5 @@
+@mixin post-image {
+  .post--image & {
+    @content;
+  }
+}
