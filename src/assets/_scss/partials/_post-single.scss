@@ -8,12 +8,18 @@
   left: 0;
   right: 0;
   padding: 16.5px 20px 16.5px 75px;
-  color: rgba(black, .3);
   font-size: 14px;
   line-height: 32px;
 
+  &, a {
+    color: rgba(black, .3);
+
+    @include post-image {
+      color: rgba(white, .97);
+    }
+  }
+
   @include post-image {
-    color: rgba(white, .97);
     text-shadow: 0 2px 15px rgba(black, .75);
   }
 
@@ -22,10 +28,6 @@
 
     &:hover, &:focus {
       text-decoration: underline;
-    }
-
-    @include post-image {
-      color: rgba(white, .97);
     }
   }
 
