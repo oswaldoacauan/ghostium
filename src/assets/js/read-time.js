@@ -8,16 +8,15 @@
     post: function() {
       var $post = $('.post:not(.post-item)');
 
-      if ($post.length && !$('.metabar-item-reading-time').length) {
-        var $target = $('<span/>', {
-          'class': 'metabar-item metabar-item-reading-time'
-        });
+      if ($post.length && !$('.metabar-item--reading-time').length) {
+        var $target         = $('<span/>', {'class': 'metabar-item metabar-item--reading-time'}),
+            words           = $post.find('.post-header, .post-body').text().trim().split(/\s+/g).length,
+            wordsPerMinutes = 270,
+            readTime        = Math.ceil(words / wordsPerMinutes);
 
         $('.metabar__side--right').append($target);
 
-        $post.readingTime({
-          readingTimeTarget: $target
-        });
+        $target.text(readTime + ' min')
       }
     },
 

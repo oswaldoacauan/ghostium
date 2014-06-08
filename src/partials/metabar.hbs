@@ -1,25 +1,29 @@
 <div class="metabar metabar--static{{#unless post}} metabar--static--inversed{{/unless}}">
   <div class="metabar__side metabar__side--left">
-    <button data-action="open-drawer" id="drawer-button" class="drawer-button">
-      <i class="fa fa-bars"></i>
-    </button>
+    <div class="metabar-item metabar-item--drawer-button">
+      <button data-action="open-drawer" id="drawer-button" class="drawer-button">
+        <i class="fa fa-bars"></i>
+      </button>
+    </div>
 
     {{#post}}
-      <a href="{{author.website}}" class="metabar-author">
-        {{#if author.image}}
-          <img src="{{author.image}}" alt="{{author.name}}">
-        {{/if}}
+      <div class="metabar-item metabar-item--post-meta">
+        <a href="{{author.website}}" class="metabar-item--post-meta__author">
+          {{#if author.image}}
+            <img src="{{author.image}}" alt="{{author.name}}">
+          {{/if}}
 
-        {{author.name}}<!--
-      --></a>
+          {{author.name}}<!--
+        --></a>
 
-      {{tags prefix="in " separator=", "}}
+        {{tags prefix="in " separator=", "}}
 
-      on
+        on
 
-      <time datetime="{{date published_at format="YYYY-MM-DD"}}" itemprop="datePublished">
-        {{date published_at format="MMM D"}}<span>, {{date published_at format="YYYY"}}</span>
-      </time>
+        <time datetime="{{date published_at format="YYYY-MM-DD"}}" itemprop="datePublished">
+          {{date published_at format="MMM D"}}<span>, {{date published_at format="YYYY"}}</span>
+        </time>
+      </div>
     {{/post}}
   </div>
 

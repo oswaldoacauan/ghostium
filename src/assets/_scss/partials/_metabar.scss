@@ -1,6 +1,34 @@
 $affixed: ".metabar--affixed";
 $inversed: ".metabar--static.metabar--static--inversed";
 
+@mixin line {
+  background-color: rgba(black, .15);
+  content: '';
+  width: 1px;
+  height: 28px;
+  position: absolute;
+  top: 50%;
+  margin-top: -14px;
+
+  #{$inversed} & {
+    background-color: rgba(white, .35);
+  }
+}
+
+@mixin line-before {
+  &:before {
+    @include line;
+    left: -1px;
+  }
+}
+
+@mixin line-after {
+  &:after {
+    @include line;
+    right: -1px;
+  }
+}
+
 .metabar {
   position: absolute;
   top: 0;
@@ -9,7 +37,7 @@ $inversed: ".metabar--static.metabar--static--inversed";
   min-height: 64px;
   padding: 10px;
   font-size: 14px;
-  line-height: 32px;
+  line-height: 44px;
   z-index: 1000;
 
   transition-duration: 0.2s, 0.2s;
@@ -27,37 +55,18 @@ $inversed: ".metabar--static.metabar--static--inversed";
       text-decoration: underline;
     }
   }
-
-  .metabar-author {
-    border-left: 1px solid rgba(black, .15);
-    position: relative;
-    padding-left: 40px;
-
-    img {
-      display: inline;
-      position: absolute;
-      top: 50%;
-      left: 0;
-      width: 32px;
-      height: 32px;
-      margin-top: -16px;
-      border-radius: 16px;
-    }
-  }
 }
 
 #{$affixed} {
-  background-color: rgba(white, .97);
   position: fixed;
-  top: 0;
+  background-color: rgba(white, .97);
   box-shadow: 0 0 1px rgba(black, .15);
 }
 
 #{$inversed} {
-  text-shadow: 0 2px 15px rgba(black, .75);
-
-  &, a {
+  &, a, button {
     color: rgba(white, .97);
+    text-shadow: 0 2px 15px rgba(black, .75);
   }
 }
 
@@ -66,27 +75,75 @@ $inversed: ".metabar--static.metabar--static--inversed";
   transition-property: border-color;
   transition-timing-function: ease;
 
-  #{$inversed} & {
-    border-color: rgba(white, .35);
-  }
-
   &.metabar__side--left {
     float: left;
   }
 
   &.metabar__side--right {
-    border-left: 1px solid rgba(black, .15);
     float: right;
-    padding-left: 16px;
     text-align: right;
   }
+}
+
+.metabar-item {
+  display: block;
+  position: relative;
+  float: left;
+
+  .metabar__side--left & {
+    padding: 0 16px;
+
+    &:first-child {
+      padding-left: 8px;
+    }
+  }
+
+  .metabar__side--right & {
+    padding: 0 16px;
+
+    &:last-child {
+      padding-right: 8px;
+    }
+  }
+}
+
+.metabar-item--drawer-button {
+  width: 54px;
+  height: 44px;
+}
+
+.metabar-item--post-meta {
+  @include line-before;
+}
+
+.metabar-item--post-meta__author {
+  position: relative;
+  padding-left: 40px;
+
+  img {
+    display: inline;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 32px;
+    height: 32px;
+    margin-top: -16px;
+    border-radius: 16px;
+  }
+}
+
+.metabar-item--likes {
+  @include line-after;
 }
 
 .drawer-button {
   background: none;
   border: 0;
-  width: 45px;
-  height: 45px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 44px;
+  height: 44px;
   font-size: 24px;
   padding: 0;
   color: #333;
