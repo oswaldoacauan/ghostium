@@ -5,16 +5,17 @@
       module.list();
     },
 
+    config: {
+      selector: '.post-header, .post-body'
+    },
+
     post: function() {
       var $post = $('.post:not(.post-item)');
 
       if ($post.length && !$('.metabar-item--reading-time').length) {
-        var $side           = $('.metabar__side--right'),
-            $social         = $side.find('.metabar-item--social'),
-            $readingTime    = $('<span/>', {'class': 'metabar-item metabar-item--reading-time'}),
-            words           = $post.find('.post-header, .post-body').text().trim().split(/\s+/g).length,
-            wordsPerMinutes = 270,
-            time            = Math.ceil(words / wordsPerMinutes);
+        var $side        = $('.metabar__side--right'),
+            $social      = $side.find('.metabar-item--social'),
+            $readingTime = $('<span/>', {'class': 'metabar-item metabar-item--reading-time'});
 
         if ($social.length) {
           $social.before($readingTime);
@@ -22,7 +23,9 @@
           $side.append($readingTime);
         }
 
-        $readingTime.text(time + ' min')
+        $post.find(module.config.selector).readingTime({
+          readingTimeTarget: $readingTime
+        });
       }
     },
 
@@ -46,7 +49,7 @@
           $(this).readingTime({
             readingTimeTarget: $target,
             remotePath: $(this).find('.post-item-title a').attr('href'),
-            remoteTarget: '.post'
+            remoteTarget: module.config.selector
           });
         }
       });
