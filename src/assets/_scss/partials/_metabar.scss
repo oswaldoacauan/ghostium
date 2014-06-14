@@ -98,7 +98,6 @@ $inversed: ".metabar--static.metabar--static--inversed";
   position: relative;
   display: block;
   float: left;
-  padding: 8px;
 
   .metabar__side--left & {
     padding: 0 16px;
@@ -183,6 +182,40 @@ $inversed: ".metabar--static.metabar--static--inversed";
     @include breakpoint(small) {
       opacity: 0;
       pointer-events: none;
+    }
+  }
+}
+
+.metabar-btn {
+  display: inline-block;
+  background: rgba(black, 0);
+  border: 1px solid rgba(black, .15);
+  border-radius: 18px;
+  width: 36px;
+  height: 36px;
+  color: rgba(black, .44);
+  font-size: 14px;
+  line-height: 36px;
+  text-align: center;
+  vertical-align: middle;
+
+  transition-duration: 0.1s, 0.1s, 0.1s;
+  transition-property: background-color, border-color, color;
+  transition-timing-function: ease, ease, ease;
+
+  &:hover, &:focus {
+    color: rgba(black, .6);
+    border-color: rgba(black, .3);
+  }
+
+  #{$inversed} & {
+    color: rgba(white, .97);
+    border-color: rgba(white, .97);
+
+    &:hover, &:focus {
+      background: rgba(87, 173, 104, .8);
+      border-color: rgba(87, 173, 104, .8);
+      color: white;
     }
   }
 }
