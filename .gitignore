@@ -2,6 +2,9 @@
 # This takes care of .tmp, .sass-cache, and many others
 .*/
 
+# Project
+/vendor
+
 # OSX
 ._*
 .AppleDouble

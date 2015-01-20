@@ -1,0 +1,45 @@
+<div class="metabar metabar--static{{#unless post}} metabar--static--inversed{{/unless}}">
+  <div class="metabar__side metabar__side--left">
+    <div class="metabar-item metabar-item--drawer-button">
+      <button data-action="open-drawer" id="drawer-button" class="drawer-button">
+        <i class="fa fa-bars"></i>
+      </button>
+    </div>
+
+    {{#post}}
+      <div class="metabar-item metabar-item--post-meta">
+        <a href="{{author.website}}" class="metabar-item--post-meta__author">
+          {{#if author.image}}
+            <img src="{{author.image}}" alt="{{author.name}}">
+          {{/if}}
+
+          {{author.name}}<!--
+        --></a>
+
+        {{tags prefix="in " separator=", "}}
+
+        on
+
+        <time datetime="{{date published_at format="YYYY-MM-DD"}}" itemprop="datePublished">
+          {{date published_at format="MMM D"}}<span>, {{date published_at format="YYYY"}}</span>
+        </time>
+      </div>
+    {{/post}}
+  </div>
+
+  <div class="metabar__side metabar__side--right">
+    {{#post}}
+      <span class="metabar-item metabar-item--social">
+        <a href="#" class="metabar-btn" data-action="share-twitter">
+          <i class="fa fa-fw fa-lg fa-twitter"></i>
+        </a>
+        <a href="#" class="metabar-btn" data-action="share-facebook">
+          <i class="fa fa-fw fa-lg fa-facebook"></i>
+        </a>
+        <a href="#" class="metabar-btn" data-action="share-gplus">
+          <i class="fa fa-fw fa-lg fa-google-plus"></i>
+        </a>
+      </span>
+    {{/post}}
+  </div>
+</div>

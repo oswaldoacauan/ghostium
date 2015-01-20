@@ -1,0 +1,11 @@
+@mixin metabar-inversed {
+  .metabar--static.metabar--static--inversed & {
+    @content;
+  }
+}
+
+@mixin post-image {
+  .post--image & {
+    @content;
+  }
+}

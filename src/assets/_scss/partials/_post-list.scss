@@ -60,6 +60,7 @@
 
   &:before {
     content: ' · ';
+    margin: 0 .125em;
   }
 
   &:first-child:before {
@@ -81,14 +82,6 @@
 
   time, span {
     display: inline-block;
-  }
-
-  @include breakpoint(x-small) {
-    //display: block;
-
-    &:before {
-      display: none;
-    }
   }
 }
 

@@ -67,6 +67,7 @@ module.exports = function(grunt) {
           ]
         }]
       },
+
       release: {
         files: [{
           dot: true,
@@ -356,6 +357,13 @@ module.exports = function(grunt) {
         github: 'oswaldoacauan/ghostium'
       }
     },
+
+    watch: {
+      all: {
+        files: ['src/**/*.{js,hbs,scss}'],
+        tasks: ['dryrun']
+      }
+    }
   });
 
   /**

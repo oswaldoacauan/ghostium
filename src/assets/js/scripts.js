@@ -7,21 +7,19 @@
     var GHOSTIUM = window.GHOSTIUM;
 
     // Cache a couple of useful elements
-    // =================
+    // =================================
     var $window   = $(window),
         $document = $(document),
-        $html     = $(document.documentElement),
-        $body     = $(document.body),
+        $body     = $('body'),
         $head     = $('head'),
-        $surface  = $body,
-        $content  = $('.content', $surface);
+        $content  = $('.content');
 
     // FastClick bindings
-    // =================
+    // ==================
     FastClick.attach(document.body);
 
     // Drawer bindings
-    // =================
+    // ===============
     Drawer.init();
 
     // PrismJS handler
@@ -63,7 +61,7 @@
       }
 
       if(typeof DISQUSWIDGETS === 'object') {
-        var $identifiers = $body.find('[data-disqus-identifier]'),
+        var $identifiers = $('[data-disqus-identifier]'),
             $script      = $head.find('script[src*="disqus.com/count-data.js"]');
 
         var posts = $identifiers
@@ -104,7 +102,7 @@
     // =================
     if ($.support.pjax && GHOSTIUM.enablePjax) {
       $document.on('pjax:start', function() {
-        $surface.scrollTop(0);
+        $body.scrollTop(0);
       });
 
       $document.on('pjax:end', function() {
@@ -186,14 +184,14 @@
     });
 
     // Async load images
-    $('[data-load-image]', $body).each(function() {
+    $('[data-load-image]').each(function() {
       ImageLoader.load($(this));
     });
 
     // Hide drawer button on scroll for best readability
     // =================
-    $surface.on('scroll', function() {
-      var offset = $surface.scrollTop(),
+    $body.on('scroll', function() {
+      var offset = $(this).scrollTop(),
           btn = $('#drawer-button');
       if(offset === 0) {
         btn.removeClass('drawer-button-hidden');
@@ -208,19 +206,21 @@
       e.preventDefault();
 
       var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+
+      if (!target.length) {
+        target = $('[name=' + this.hash.slice(1) +']');
+      }
+
       if (target.length) {
-        $surface.animate({
-          scrollTop: target.offset().top
-        }, 500);
+        $('html, body').animate({scrollTop: target.offset().top}, 500);
+
         location.hash = this.hash;
-        return false;
       }
     });
 
     // Fix oveflow-scrolling on iOS7
     // =================
-    $surface.on('touchstart', function(e) {});
+    $body.on('touchstart', function(e) {});
 
     // Fix keyboard scrolling not working when page load
     // =================

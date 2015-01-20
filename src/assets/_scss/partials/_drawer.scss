@@ -23,45 +23,6 @@
   }
 }
 
-.drawer-button {
-  position: fixed;
-  top: 10px;
-  left: 10px;
-  width: 45px;
-  height: 45px;
-  z-index: 1000;
-  font-size: 24px;
-  padding: 0;
-  outline: 0;
-  border: 0;
-  text-align: center;
-  vertical-align: middle;
-  background-color: $drawer-background-color;
-  color: $background-color;
-  transition: opacity .3s linear;
-
-  &:hover,
-  &:focus {
-    outline: 0;
-  }
-
-  .drawer-transition & {
-    opacity: 0;
-    pointer-events: none;
-  }
-
-  &.drawer-button-hidden {
-    @include breakpoint(small) {
-      opacity: 0;
-      pointer-events: none;
-    }
-  }
-
-  .drawer-open & {
-    display: none;
-  }
-}
-
 .drawer-container {
   display: none;
   height: 100%;

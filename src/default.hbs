@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="no-js" lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -76,6 +76,7 @@
       <div class="surface">
         <div class="surface-container">
           <div data-pjax-container class="content">
+            {{> metabar this}}
             {{{body}}}
           </div>
         </div>
@@ -87,13 +88,13 @@
     <!-- build:js /assets/js/foot-scripts.min.js -->
     <script src="/assets/_components/fastclick/lib/fastclick.js"></script>
 
-    <!-- PrismJS core, aditional languages and plugins -->
+    <!-- PrismJS core, additional languages and plugins -->
     <script src="/assets/_components/prism/prism.js"></script>
     <script src="/assets/_components/prism/components/prism-aspnet.js"></script>
     <script src="/assets/_components/prism/components/prism-bash.js"></script>
     <script src="/assets/_components/prism/components/prism-c.js"></script>
     <script src="/assets/_components/prism/components/prism-clike.js"></script>
-    <script src="/assets/_components/prism/components/prism-coffescript.js"></script>
+    <script src="/assets/_components/prism/components/prism-coffeescript.js"></script>
     <script src="/assets/_components/prism/components/prism-cpp.js"></script>
     <script src="/assets/_components/prism/components/prism-csharp.js"></script>
     <script src="/assets/_components/prism/components/prism-css-extras.js"></script>
@@ -111,9 +112,17 @@
     <script src="/assets/_components/prism/components/prism-sql.js"></script>
     <script src="/assets/_components/prism/plugins/autolinker/prism-autolinker.js"></script>
 
+    <!-- Other third-party scripts -->
     <script src="/assets/_components/jquery-pjax/jquery.pjax.js"></script>
+    <script src="/assets/_components/reading-time/src/readingTime.js"></script>
+
+    <!-- Ghostium scripts -->
     <script src="/assets/js/drawer.js"></script>
-    <script src="/assets/js/imageLoader.js"></script>
+    <script src="/assets/js/image-loader.js"></script>
+    <script src="/assets/js/metabar.js"></script>
+    <script src="/assets/js/post.js"></script>
+    <script src="/assets/js/post-image.js"></script>
+    <script src="/assets/js/read-time.js"></script>
     <script src="/assets/js/scripts.js"></script>
     <!-- endbuild -->
 

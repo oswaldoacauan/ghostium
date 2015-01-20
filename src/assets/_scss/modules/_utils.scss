@@ -55,6 +55,18 @@
   visibility: hidden !important;
 }
 
+.js {
+  .js-hidden {
+    display: none;
+  }
+}
+
+.no-js {
+  .js-shown {
+    display: none;
+  }
+}
+
 .text-left {
   text-align: left;
 }

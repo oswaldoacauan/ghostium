@@ -22,6 +22,7 @@
     "font-awesome": "~4.1.0",
     "prism": "gh-pages",
     "pace": "~0.5.1",
-    "jquery-pjax": "master"
+    "jquery-pjax": "master",
+    "reading-time": "master"
   }
 }
