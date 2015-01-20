@@ -1,33 +1,44 @@
 {{!< default}}
 
-<section class="wrapper wrapper-post">
-  <div class="wrapper-container">
-    <article itemscope itemtype="http://schema.org/BlogPosting" role="article" class="post {{post_class}}">
-      {{#post}}
+{{#post}}
+  <article itemscope itemtype="http://schema.org/BlogPosting" role="article" class="post {{post_class}}">
+    <div class="post-image">
+      <div>
+        <header class="post-header">
+          <h1 itemprop="name headline" class="post-title">
+            {{{title}}}
+          </h1>
+
+          {{! A subtitle not available in Ghosts yet }}
+          <!--h2 itemprop="about" class="post-subtitle"></h2-->
+
+          <ul class="post-meta-list">
+            <li class="post-meta-item post-meta-item-date-published">
+              <time datetime="{{date published_at format="YYYY-MM-DD"}}" itemprop="datePublished">
+                {{date published_at timeago="true"}}
+              </time>
+            </li>
+            {{#if tags}}
+              <li class="post-meta-item post-meta-item-tags">
+                <i class="fa fa-tags"></i>
+                {{#foreach tags}}
+                  <a itemprop="{{#if @first}}articleSection{{else}}keywords{{/if}}" href="{{url}}" data-pjax>{{name}}</a>
+                  {{~#if @last}} {{else}}, {{/if}}
+                {{/foreach}}
+              </li>
+            {{/if}}
+            <li class="post-meta-item post-meta-item-comments">
+              <i class="fa fa-comments"></i>
+              <a href="#disqus_thread" data-disqus-identifier="{{id}}">Comments</a>
+            </li>
+          </ul>
+        </header>
+      </div>
+    </div>
+
+    <section class="wrapper wrapper-post">
+      <div class="wrapper-container">
         <section class="post-container">
-          <header class="post-header">
-            <ul class="post-meta-list">
-              <li class="post-meta-item">
-                <time datetime="{{date published_at format="YYYY-MM-DD"}}" itemprop="datePublished">
-                  {{date published_at timeago="true"}}
-                </time>
-              </li>
-              {{#if tags}}
-                <li class="post-meta-item">
-                  {{#foreach tags}}
-                    <a itemprop="{{#if @first}}articleSection{{else}}keywords{{/if}}" href="{{url}}" data-pjax>{{name}}</a>
-                    {{~#if @last}} {{else}}, {{/if}}
-                  {{/foreach}}
-                </li>
-              {{/if}}
-              <li class="post-meta-item">
-                <a href="#disqus_thread" data-disqus-identifier="{{id}}">Comments</a>
-              </li>
-            </ul>
-            <h1 itemprop="name headline" class="post-title"><a href="{{url}}" itemprop="url" data-pjax title="{{{title}}}">{{{title}}}</a></h1>
-            {{! A subtitle not available in Ghosts yet }}
-            <!--h2 itemprop="about" class="post-subtitle"></h2-->
-          </header>
           <aside class="post-side">
             <div class="post-author">
               {{#if author.image}}
@@ -35,6 +46,7 @@
                   <img src="{{author.image}}" alt="{{author.name}}">
                 </a>
               {{/if}}
+
               <div class="post-author-info">
                 <a href="{{author.website}}" class="post-author-name">
                   {{author.name}}
@@ -43,9 +55,11 @@
               </div>
             </div>
           </aside>
+
           <div itemprop="articleBody" class="post-body">
             {{content}}
           </div>
+
           <footer class="post-footer">
             <div itemprop="author" itemscope itemtype="http://schema.org/Person" class="post-author">
               {{#if author.image}}
@@ -55,18 +69,23 @@
               {{/if}}
               <div class="post-author-info">
                 <h4 class="post-footer-heading">Written By</h4>
+
                 <a href="{{author.website}}" itemprop="url" class="post-author-name">
                   <span itemprop="name">{{author.name}}</span>
                 </a>
+
                 <p itemprop="description" class="post-author-bio">{{author.bio}}</p>
+
                 {{#if author.location}}
                   <p class="post-author-location">{{author.location}}</p>
                 {{/if}}
+
                 {{#if author.website}}
                   <p class="post-author-website">
                     <a href="{{author.website}}" rel="nofollow">{{author.website}}</a>
                   </p>
                 {{/if}}
+
                 <p class="post-info">
                   <b class="post-info-title">Published on</b>
                   <time class="post-date">{{date format='MMMM DD, YYYY'}}</time>
@@ -81,17 +100,18 @@
             </div>
           </footer>
         </section>
-      {{/post}}
-      <section itemprop="comment" class="post-comments">
-        <div id="disqus_thread"></div>
-      </section>
-    </article>
 
-    {{> footer this}}
-  </div>
-</section>
+        <section itemprop="comment" class="post-comments">
+          <div id="disqus_thread"></div>
+        </section>
 
-<script type="text/javascript">
+        {{> footer this}}
+      </div>
+    </section>
+  </article>
+{{/post}}
+
+<script>
   if(GHOSTIUM.haveDisqus) {
     {{#post}}
     var disqus_identifier = '{{id}}';
