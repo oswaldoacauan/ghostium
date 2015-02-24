@@ -29,22 +29,11 @@
     <link href="/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
 
     <link href="//fonts.googleapis.com/" rel="dns-prefetch">
-    <link href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Open+Sans:700,400&subset=latin,latin-ext" rel="stylesheet">
-
-    <link rel="stylesheet" href="{{asset 'css/main.min.css'}}"/>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,300,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{asset 'css/styles.min.css'}}"/>
 
     <script type="text/javascript">
       {{> custom/config}}
-
-      // Pace Options
-      // ==============
-      window.paceOptions = {
-        catchupTime: 100,
-        minTime: 100,
-        elements: false,
-        restartOnRequestAfter: 500,
-        startOnPageLoad: false
-      }
 
       // Ghostium Globals
       // ==============
@@ -54,9 +43,10 @@
       GHOSTIUM.enablePjax = typeof enable_pjax !== 'undefined' ? enable_pjax : true;
     </script>
 
-    <script src="{{asset 'js/head-scripts.min.js'}}"></script>
+    <script src="{{asset 'js/vendors.js'}}"></script>
 
     {{ghost_head}}
+
   </head>
   <body class="{{body_class}}">
 
@@ -75,7 +65,17 @@
 
     {{ghost_foot}}
 
-    <script src="{{asset 'js/foot-scripts.min.js'}}"></script>
+    <script src="{{asset 'js/main.js'}}"></script>
+
+
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&appId=1533108060248506&version=v2.0";
+      fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
 
     <script type="text/javascript">
 
