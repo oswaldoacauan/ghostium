@@ -1,55 +1,42 @@
 {
-  "name": "Ghostium",
-  "version": "2.2.1",
-  "description": "A Ghost theme focused on content based on Medium design/ux",
-  "url": "http://ghostium.oswaldoacauan.com/",
-  "copyright": "2013",
-  "license": "MIT",
-  "author": {
-    "name": "Oswaldo Acauan",
-    "email": "hello@oswaldoacauan.com",
-    "url": "http://oswaldoacauan.com"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:oswaldoacauan/ghostium.git"
-  },
-  "bugs": {
-    "url": "https://github.com/oswaldoacauan/ghostium/issues"
-  },
-  "keywords": [
-    "ghost",
-    "blog",
-    "theme",
-    "medium"
-  ],
-  "dependencies": {},
-  "devDependencies": {
-    "matchdep": "~0.3.0",
-    "grunt": "~0.4.1",
-    "grunt-contrib-clean": "~0.5.0",
-    "grunt-contrib-copy": "~0.4.1",
-    "grunt-contrib-concat": "~0.3.0",
-    "grunt-contrib-csslint": "~0.1.2",
-    "grunt-contrib-cssmin": "~0.6.2",
-    "grunt-contrib-imagemin": "~0.3.0",
-    "grunt-contrib-jshint": "~0.7.0",
-    "grunt-contrib-sass": "~0.5.0",
-    "grunt-contrib-uglify": "~0.2.4",
-    "grunt-autoprefixer": "~0.4.0",
-    "grunt-csscss": "~0.6.1",
-    "grunt-svgmin": "~0.2.0",
-    "grunt-usemin": "~2.0.0",
-    "grunt-push-release": "~0.1.1",
-    "grunt-conventional-changelog": "~1.0.0",
-    "grunt-csso": "~0.5.0",
-    "grunt-text-replace": "~0.3.11"
-  },
-  "engines": {
-    "node": ">=0.10.0"
-  },
+  "name": "mojo ",
+  "version": "0.0.1",
+  "description": "This is a [Ghost](http://ghost.org) theme using [H5BP](http://html5boilerplate.com/) and [gulp](http://gulpjs.com/).",
+  "main": "gulp",
   "scripts": {
-    "test": "grunt --verbose",
-    "postinstall": "bundle install && bower install"
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Peter Kaleta",
+  "license": "MIT",
+  "dependencies": {
+    "bean": "^1.0.15",
+    "bonzo": "^2.0.0",
+    "bower": "^1.2.8",
+    "browserify": "^9.0.3",
+    "gulp": "^3.5.5",
+    "gulp-autoprefixer": "~1.0.0",
+    "gulp-bower": "0.0.10",
+    "gulp-concat": "^2.1.7",
+    "gulp-exec": "^1.0.4",
+    "gulp-if": "^1.2.5",
+    "gulp-jshint": "~1.8.4",
+    "gulp-livereload": "^3.6.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^0.6.6",
+    "gulp-rename": "^1.2.0",
+    "gulp-ruby-sass": "^1.0.0-alpha.3",
+    "gulp-size": "^1.2.0",
+    "gulp-sourcemaps": "^1.3.0",
+    "gulp-uglify": "^1.1.0",
+    "gulp-util": "^3.0.2",
+    "gulp-watch": "^0.5.0",
+    "lodash": "^3.3.0",
+    "qwery": "^4.0.0",
+    "tiny-lr": "0.0.5"
+  },
+  "devDependencies": {
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.0.0",
+    "watchify": "^2.4.0"
   }
 }

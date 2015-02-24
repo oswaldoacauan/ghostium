@@ -1,0 +1,18 @@
+{
+  "paths": {
+    "sassDir": "./dev/assets/scss",
+    "jsDir" : "./dev/scripts",
+
+    "build": {
+      "cssDir": "./assets/css",
+      "fontsDir": "./assets/fonts",
+      "jsDir": "./assets/js"
+    },
+    "clientDir": "./client",
+    "buildDir": "./client/build",
+    "bowerDir": "./bower_components",
+    "fontsDest": "./client/build/fonts",
+    "imagesDest": "./client/build/images",
+    "imagesDir": "./client/assets/images"
+  }
+}
