@@ -6,6 +6,8 @@
       {{#post}}
         <section class="post-container">
           <header class="post-header">
+            <a id="back-button" class="btn small square" style="display:inline" href="javascript:history.back()">« Back</a>{{!Adding a back button to post -makes for easier navigation}}
+
             <ul class="post-meta-list">
               <li class="post-meta-item">
                 <time datetime="{{date published_at format="YYYY-MM-DD"}}" itemprop="datePublished">
