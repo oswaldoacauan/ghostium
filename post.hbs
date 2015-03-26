@@ -6,6 +6,8 @@
       {{#post}}
         <section class="post-container">
           <header class="post-header">
+            <a id="back-button" class="btn small square" style="display:inline" href="javascript:history.back()">« Back</a>{{!Adding a back button to post -makes for easier navigation}}
+
             <ul class="post-meta-list">
               <li class="post-meta-item">
                 <time datetime="{{date published_at format="YYYY-MM-DD"}}" itemprop="datePublished">
@@ -108,4 +110,18 @@
   } else {
     document.querySelector('.post-comments').remove();
   }
+</script>
+<script type=text/javascript>
+// script to add estimated number of minutes it will take to read the post
+//Found this solution while googling -https://ghost.org/forum/plugins/4443-post-estimated-read-time-for-hosted-ghost/
+    var pageText = $('.post-body').text().replace(/\r?\n/g,'');
+
+    var read_time = function(text){
+    var minutes = Math.floor(text.split(' ').length / 200 )
+    if(minutes === 0) minutes = 1
+    return minutes +' ' +' min read'
+    }
+
+    $('.post-meta-list').append(' '+read_time(pageText)+'');
+
 </script>
