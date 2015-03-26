@@ -111,3 +111,16 @@
     document.querySelector('.post-comments').remove();
   }
 </script>
+<script type=text/javascript>
+// script to add estimated number of minutes it will take to read the post
+    var pageText = $('.post-body').text().replace(/\r?\n/g,'');
+
+    var read_time = function(text){
+    var minutes = Math.floor(text.split(' ').length / 200 )
+    if(minutes === 0) minutes = 1
+    return minutes +' ' +' min read'
+    }
+
+    $('.post-meta-list').append(' '+read_time(pageText)+'');
+
+</script>
