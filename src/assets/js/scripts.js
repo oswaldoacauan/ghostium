@@ -79,7 +79,7 @@
         if(posts.length) {
           $head.append($('<script/>', {
             async: true,
-            src: '//' + disqus_shortname + '.disqus.com/count.js?' + posts.join('&')
+            src: '//' + window.disqus_shortname + '.disqus.com/count.js?' + posts.join('&')
           }));
 
           DISQUSWIDGETS.getCount();
