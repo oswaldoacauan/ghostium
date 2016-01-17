@@ -204,7 +204,7 @@
 
     // Smooth scrolling for same page anchors
     // =================
-    $document.on('click', 'a[href^=#]:not([href=#])', function(e) {
+    $('a[href^="#"]:not(a[href="#"])').on('click', function(e) {
       e.preventDefault();
 
       var target = $(this.hash);
