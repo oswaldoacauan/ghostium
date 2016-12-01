@@ -234,6 +234,10 @@
       _disqusHandler();
     });
 
+    $('.drawer-list').on('click', 'a', function () {
+      Drawer.close();
+    });
+
   });
 
 })(jQuery, window, document);
