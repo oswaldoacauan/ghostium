@@ -38,18 +38,16 @@
 ```sh
 $ git clone https://github.com/oswaldoacauan/ghostium/ "ghostium"
 ```
-3. Restart ghost and log in to your dashboard
-4. In settings under themes select **ghostium** and save
-5. That's all, now its time to [configure](#configuring) your theme
+3. In settings under themes select **ghostium** and save
+4. That's all, now its time to [configure](#configuring) your theme
 
 
 ### Manually
 1. Download the files using the [GitHub .zip download](https://github.com/oswaldoacauan/ghostium/archive/master.zip) option
 2. Unzip the files and rename the folder to `ghostium`
 4. Copy the folder into your Ghost theme directory `ghost/content/themes`
-5. Restart ghost and log in to your dashboard
-6. In settings under themes select **ghostium** and save
-7. That's all, now its time to [configure](#configuring) your theme
+5. In settings under themes select **ghostium** and save
+6. That's all, now its time to [configure](#configuring) your theme
 
 ## Configuring
 
