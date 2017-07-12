@@ -428,7 +428,7 @@ module.exports = function(grunt) {
       grunt.task.run('push:' + (versionType || '') + ':bump-only');
       grunt.task.run([
         'dryrun',
-        'changelog'
+        // 'changelog'
       ]);
       grunt.task.run('push-commit');
     }
