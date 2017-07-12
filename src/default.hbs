@@ -21,7 +21,7 @@
 
     <meta property="og:url" content="{{@blog.url}}">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="{{meta_title}}">  
+    <meta property="og:title" content="{{meta_title}}">
     <meta property="og:description" content="{{meta_description}}">
     <meta property="og:site_name" content="{{@blog.title}}">
 
@@ -36,8 +36,10 @@
     <link href="//fonts.googleapis.com/" rel="dns-prefetch">
     <link href="//fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic|Open+Sans:700,400&subset=latin,latin-ext" rel="stylesheet">
 
+    <link href="//cdnjs.cloudflare.com/" rel="dns-prefetch">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+
     <!-- build:css({src,.tmp}) /assets/css/main.min.css -->
-    <link href="/assets/_components/font-awesome/css/font-awesome.css">
     <link href="/assets/_components/prism/themes/prism.css">
     <link href="/assets/_components/prism/plugins/autolinker/prism-autolinker.css">
     <link href="/assets/_components/pace/themes/pace-theme-minimal.css">
@@ -65,9 +67,11 @@
       GHOSTIUM.enablePjax = typeof enable_pjax !== 'undefined' ? enable_pjax : true;
     </script>
 
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
+
     <!-- build:js /assets/js/head-scripts.min.js -->
-    <script src="/assets/_components/modernizr/modernizr.js"></script>
-    <script src="/assets/_components/pace/pace.js"></script>
     <!-- endbuild -->
 
     {{ghost_head}}
@@ -92,21 +96,31 @@
     <!-- build:js /assets/js/foot-scripts.min.js -->
     <script src="/assets/_components/fastclick/lib/fastclick.js"></script>
 
-    <!-- PrismJS core, aditional languages and plugins -->
-    <script src="/assets/_components/prism/prism.js"></script>
+    <!-- PrismJS core and base languages -->
+    <script src="/assets/_components/prism/components/prism-core.js"></script>
+    <script src="/assets/_components/prism/components/prism-markup.js"></script>
+    <script src="/assets/_components/prism/components/prism-css.js"></script>
+    <script src="/assets/_components/prism/components/prism-clike.js"></script>
+    <script src="/assets/_components/prism/components/prism-javascript.js"></script>
+    <script src="/assets/_components/prism/components/prism-file-highlight.js"></script>
+
+    <!-- PrismJS additional languages and plugins -->
     <script src="/assets/_components/prism/components/prism-aspnet.js"></script>
     <script src="/assets/_components/prism/components/prism-bash.js"></script>
     <script src="/assets/_components/prism/components/prism-c.js"></script>
-    <script src="/assets/_components/prism/components/prism-clike.js"></script>
     <script src="/assets/_components/prism/components/prism-coffescript.js"></script>
     <script src="/assets/_components/prism/components/prism-cpp.js"></script>
     <script src="/assets/_components/prism/components/prism-csharp.js"></script>
     <script src="/assets/_components/prism/components/prism-css-extras.js"></script>
+    <script src="/assets/_components/prism/components/prism-docker.js"></script>
     <script src="/assets/_components/prism/components/prism-gherkin.js"></script>
+    <script src="/assets/_components/prism/components/prism-git.js"></script>
     <script src="/assets/_components/prism/components/prism-go.js"></script>
     <script src="/assets/_components/prism/components/prism-groovy.js"></script>
+    <script src="/assets/_components/prism/components/prism-haml.js"></script>
     <script src="/assets/_components/prism/components/prism-http.js"></script>
     <script src="/assets/_components/prism/components/prism-java.js"></script>
+    <script src="/assets/_components/prism/components/prism-markdown.js"></script>
     <script src="/assets/_components/prism/components/prism-nsis.js"></script>
     <script src="/assets/_components/prism/components/prism-php.js"></script>
     <script src="/assets/_components/prism/components/prism-php-extras.js"></script>
@@ -114,6 +128,9 @@
     <script src="/assets/_components/prism/components/prism-ruby.js"></script>
     <script src="/assets/_components/prism/components/prism-scss.js"></script>
     <script src="/assets/_components/prism/components/prism-sql.js"></script>
+    <script src="/assets/_components/prism/components/prism-swift.js"></script>
+    <script src="/assets/_components/prism/components/prism-typescript.js"></script>
+    <script src="/assets/_components/prism/components/prism-yaml.js"></script>
     <script src="/assets/_components/prism/plugins/autolinker/prism-autolinker.js"></script>
     <script src="/assets/_components/jquery/jquery.js"></script>
     <script src="/assets/_components/jquery-pjax/jquery.pjax.js"></script>
