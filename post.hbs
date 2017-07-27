@@ -21,7 +21,7 @@
                 </li>
               {{/if}}
               <li class="post-meta-item">
-                <a href="#disqus_thread" data-disqus-identifier="{{id}}">Comments</a>
+                <a href="#disqus_thread" data-disqus-identifier="{{comment_id}}">Comments</a>
               </li>
             </ul>
             <h1 itemprop="name headline" class="post-title"><a href="{{url}}" itemprop="url" data-pjax title="{{{title}}}">{{{title}}}</a></h1>
@@ -30,9 +30,9 @@
           </header>
           <aside class="post-side">
             <div class="post-author">
-              {{#if author.image}}
+              {{#if author.profile_image}}
                 <a href="{{author.website}}" class="post-author-avatar">
-                  <img src="{{author.image}}" alt="{{author.name}}">
+                  <img src="{{author.profile_image}}" alt="{{author.name}}">
                 </a>
               {{/if}}
               <div class="post-author-info">
@@ -48,9 +48,9 @@
           </div>
           <footer class="post-footer">
             <div itemprop="author" itemscope itemtype="http://schema.org/Person" class="post-author">
-              {{#if author.image}}
+              {{#if author.profile_image}}
                 <a href="{{author.website}}" class="post-author-avatar">
-                  <img itemprop="image" src="{{author.image}}" alt="{{author.name}}">
+                  <img itemprop="image" src="{{author.profile_image}}" alt="{{author.name}}">
                 </a>
               {{/if}}
               <div class="post-author-info">
@@ -94,7 +94,7 @@
 <script type="text/javascript">
   if(GHOSTIUM.haveDisqus) {
     {{#post}}
-    var disqus_identifier = '{{id}}';
+    var disqus_identifier = '{{comment_id}}';
     {{/post}}
 
     if(typeof DISQUS !== 'object') {
