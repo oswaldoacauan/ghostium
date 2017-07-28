@@ -73,3 +73,6 @@ src/assets/_components/*
 
 # Ghostium
 build
+
+# Ignore SH stack dumps.
+sh.exe.stackdump
