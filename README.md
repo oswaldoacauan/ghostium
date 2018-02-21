@@ -50,6 +50,33 @@ $ git clone https://github.com/oswaldoacauan/ghostium/ "ghostium"
 6. In settings under themes select **ghostium** and save
 7. That's all, now its time to [configure](#configuring) your theme
 
+## Building from source
+
+### Prerequisites
+
+* Ruby >= 2.4
+* Bundler (`gem install bundler`)
+* Sass (`gem install sass`)
+* Node >= 0.10
+* Bower (`npm install -g bower`)
+* Run `npm install`
+
+### Build
+
+```
+npm run build
+```
+
+Compiles all assets into the `build/` directrory.
+
+### Zip
+
+```
+npm run zip
+```
+
+This creates the `ghostium.zip` bundle ready for upload through the UI.
+
 ## Configuring
 
 All configurable files are located in `ghostium/partials/custom`.
