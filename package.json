@@ -46,7 +46,7 @@
     "grunt-text-replace": "~0.4.0"
   },
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=8.9"
   },
   "scripts": {
     "test": "grunt --verbose",

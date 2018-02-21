@@ -57,7 +57,7 @@ $ git clone https://github.com/oswaldoacauan/ghostium/ "ghostium"
 * Ruby >= 2.4
 * Bundler (`gem install bundler`)
 * Sass (`gem install sass`)
-* Node >= 0.10
+* Node >= 8.9
 * Bower (`npm install -g bower`)
 * Run `npm install`
 
