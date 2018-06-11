@@ -25,31 +25,35 @@
   ],
   "dependencies": {},
   "devDependencies": {
-    "matchdep": "~1.0.1",
+    "bower": "^1.8.2",
     "grunt": "~1.0.1",
+    "grunt-autoprefixer": "~3.0.4",
+    "grunt-cli": "^1.2.0",
     "grunt-contrib-clean": "~1.1.0",
-    "grunt-contrib-copy": "~1.0.0",
     "grunt-contrib-concat": "~1.0.1",
+    "grunt-contrib-copy": "~1.0.0",
     "grunt-contrib-csslint": "~2.0.0",
     "grunt-contrib-cssmin": "~2.2.0",
     "grunt-contrib-imagemin": "~2.0.1",
     "grunt-contrib-jshint": "~1.1.0",
     "grunt-contrib-sass": "~1.0.0",
-    "grunt-contrib-uglify": "~3.0.1",
-    "grunt-autoprefixer": "~3.0.4",
-    "grunt-csscss": "~0.6.1",
-    "grunt-svgmin": "~4.0.0",
-    "grunt-usemin": "~3.1.1",
-    "grunt-push-release": "~0.1.1",
+    "grunt-contrib-uglify": "~3.3.0",
     "grunt-conventional-changelog": "~6.1.0",
+    "grunt-csscss": "~0.6.1",
     "grunt-csso": "~2.2.0",
-    "grunt-text-replace": "~0.4.0"
+    "grunt-push-release": "~0.1.9",
+    "grunt-svgmin": "~5.0.0",
+    "grunt-text-replace": "~0.4.0",
+    "grunt-usemin": "~3.1.1",
+    "matchdep": "~2.0.0"
   },
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=8.9"
   },
   "scripts": {
     "test": "grunt --verbose",
-    "postinstall": "bundle install && bower install"
+    "postinstall": "bundle install && bower install",
+    "build": "grunt build",
+    "zip": "cd build; zip -r ../ghostium.zip ./*"
   }
 }
