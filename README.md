@@ -1,4 +1,4 @@
-# Ghostium
+# Ghostium – [Try Ghost](https://ghost.org?lmref=1166)
 
 ![Ghostium](http://i.imgur.com/m5VcTBl.png)
 
@@ -127,3 +127,5 @@ For detailed history, see [Changelog](https://github.com/oswaldoacauan/ghostium/
 ## License
 
 [MIT License](http://oswaldoacauan.mit-license.org/) © Oswaldo Acauan
+
+[![Try Ghost](https://img.shields.io/static/v1.svg?label=Try&message=Ghost&color=46a5db)](https://ghost.org?lmref=1166)
