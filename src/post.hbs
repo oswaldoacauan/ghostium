@@ -83,6 +83,7 @@
         </section>
       {{/post}}
       <section itemprop="comment" class="post-comments">
+        <div id="discourse-comments"></div>
         <div id="disqus_thread"></div>
       </section>
     </article>
@@ -105,7 +106,26 @@
       (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
       }());
     }
-  } else {
+  }
+</script>
+
+{{#post}}
+<script type="text/javascript">
+  DiscourseEmbed = { discourseUrl: discourse_url,
+                     discourseEmbedUrl: '{{url absolute="true"}}' };
+
+  (function() {
+    if(GHOSTIUM.haveDiscourse) {
+      var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+      d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+    }
+  })();
+</script>
+{{/post}}
+
+<script type="text/javascript">
+  if(!GHOSTIUM.haveDisqus && !GHOSTIUM.haveDiscourse)) {
     document.querySelector('.post-comments').remove();
   }
 </script>
