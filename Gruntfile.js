@@ -19,11 +19,11 @@ module.exports = function(grunt) {
     build: 'build',
     assets: '/assets',
     bower: grunt.file.readJSON('.bowerrc').directory,
-    sass: '<%= dir.assets %>/_scss',
-    css: '<%= dir.assets %>/css',
-    js: '<%= dir.assets %>/js',
-    images: '<%= dir.assets %>/img',
-    fonts: '<%= dir.assets %>/fonts'
+    sass: '<%= dir.assets %>/ _scss',
+    css: '<%= dir.assets %>/ css',
+    js: '<%= dir.assets %>/ js',
+    images: '<%= dir.assets %>/ imgs',
+    fonts: '<%= dir.assets %>/ fonts'
   };
 
   /**
