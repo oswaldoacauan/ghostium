@@ -25,7 +25,7 @@
   ],
   "dependencies": {},
   "devDependencies": {
-    "bower": "^1.8.2",
+    "bower": "^1.8.8",
     "grunt": "~1.0.1",
     "grunt-autoprefixer": "~3.0.4",
     "grunt-cli": "^1.2.0",
